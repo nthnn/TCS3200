@@ -64,8 +64,15 @@ void loop() {
     ", Z: " + String(cie1931.z));
 
   Serial.println("Chroma: " + String(tcs3200.get_chroma()));
-  Serial.println("Dominant color: " + color_indices[tcs3200.get_rgb_dominant_color()]);
-  Serial.println("Nearest color: " + tcs3200.nearest_color<String>(color_indices, color_values, sizeof(color_indices) / sizeof(color_indices[0])));
+  Serial.println("Dominant color: " +
+    color_indices[tcs3200.get_rgb_dominant_color()]);
+  Serial.println("Nearest color: " + 
+    tcs3200.nearest_color<String>(
+      color_indices, 
+      color_values,
+      sizeof(color_indices) / sizeof(color_indices[0])
+    )
+  );
 
   delay(3000);
 }
