@@ -1,10 +1,10 @@
 #include <tcs3200.h>
 
-#define S0_PIN 0
-#define S1_PIN 1
-#define S2_PIN 2
-#define S3_PIN 3
-#define OUT_PIN 4
+#define S0_PIN 15
+#define S1_PIN 2
+#define S2_PIN 0
+#define S3_PIN 4
+#define OUT_PIN 16
 
 TCS3200 tcs3200(S0_PIN, S1_PIN, S2_PIN, S3_PIN, OUT_PIN);
 String color_indices[] = {"Red", "Green", "Blue", "White", "Black"};
@@ -19,9 +19,11 @@ RGBColor color_values[] = {
 
 void setup() {
   tcs3200.begin();
+  tcs3200.frequency_scaling(TCS3200_OFREQ_100P);
 
   Serial.begin(115200);
   Serial.println("TCS3200 Full Example");
+  Serial.println("-----------------------------------");
   Serial.println("Calibrating...");
 
   Serial.println("Please face the sensor to white surface.");
@@ -32,18 +34,14 @@ void setup() {
   delay(1000);
   tcs3200.calibrate_dark();
 
-  RGBColor white_balance;
-  white_balance.red = 128;
-  white_balance.green = 128;
-  white_balance.blue = 128;
-  white_balance.clear = 0;
-
-  tcs3200.white_balance(white_balance);
+  Serial.println("Done calibrating!");
   tcs3200.calibrate();
+
+  delay(1000);
 }
 
 void loop() {
-  tcs3200.check_interrupts();
+  tcs3200.loop();
   Serial.println("-----------------------------------");
 
   RGBColor rgb_color = tcs3200.read_rgb_color();
@@ -69,7 +67,9 @@ void loop() {
 
   Serial.println("Chroma: " + String(tcs3200.get_chroma()));
   Serial.println("Dominant color: " + color_indices[tcs3200.get_rgb_dominant_color()]);
-  Serial.println("Nearest color: " + tcs3200.nearest_color(color_indices, color_values, 5));
+
+  //auto nearest = tcs3200.nearest_color<String>(color_indices, color_values, 5);
+  //Serial.println("Nearest color: ");
 
   delay(3000);
 }
