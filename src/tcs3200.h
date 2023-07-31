@@ -37,6 +37,8 @@
 #ifndef TCS3200_H
 #define TCS3200_H
 
+#include <Arduino.h>
+
 #define TCS3200_COLOR_RED     0x00  ///< Red color channel for filtering
 #define TCS3200_COLOR_GREEN   0x01  ///< Green color channel for filtering
 #define TCS3200_COLOR_BLUE    0x02  ///< Blue color channel for filtering
