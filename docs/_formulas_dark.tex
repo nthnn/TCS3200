@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\color{white}
+\pagecolor{black}
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+\begin{equation}
+V = \max(R, G, B)
+\end{equation}
+\pagebreak
+
+\begin{equation}
+\Delta = \max(R, G, B) - \min(R, G, B)
+\end{equation}
+\pagebreak
+
+\begin{equation}
+S = \begin{cases} 
+  \frac{\Delta}{V} & \text{if } V \neq 0 \\
+    0 & \text{otherwise}
+  \end{cases}
+\end{equation}
+\pagebreak
+
+\begin{equation}
+H = \begin{cases} 
+  0 & \text{if } \Delta = 0 \\
+    60^\circ \times \frac{(G - B)}{\Delta} + 360^\circ & \text{if } V = R \\
+    60^\circ \times \frac{(B - R)}{\Delta} + 120^\circ & \text{if } V = G \\
+    60^\circ \times \frac{(R - G)}{\Delta} + 240^\circ & \text{if } V = B
+  \end{cases}
+\end{equation}
+\pagebreak
+
+\end{document}
