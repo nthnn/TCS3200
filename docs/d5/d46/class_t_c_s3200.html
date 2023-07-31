@@ -104,92 +104,781 @@ $(document).ready(function(){initNavTree('d5/d46/class_t_c_s3200.html','../../')
   <div class="headertitle"><div class="title">TCS3200 Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing the <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> color sensor.  
+ <a href="../../d5/d46/class_t_c_s3200.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/d66/tcs3200_8h_source.html">tcs3200.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7c90816fe4acde66b94e1646ee85cdc7"><td class="memItemLeft" align="right" valign="top"><a id="a7c90816fe4acde66b94e1646ee85cdc7" name="a7c90816fe4acde66b94e1646ee85cdc7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TCS3200</b> (uint8_t s0_pin, uint8_t s1_pin, uint8_t s2_pin, uint8_t s3_pin, uint8_t out_pin)</td></tr>
+<tr class="memitem:a7c90816fe4acde66b94e1646ee85cdc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a7c90816fe4acde66b94e1646ee85cdc7">TCS3200</a> (uint8_t s0_pin, uint8_t s1_pin, uint8_t s2_pin, uint8_t s3_pin, uint8_t out_pin)</td></tr>
+<tr class="memdesc:a7c90816fe4acde66b94e1646ee85cdc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> class.  <br /></td></tr>
 <tr class="separator:a7c90816fe4acde66b94e1646ee85cdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeac73462f78401dc99e38206ae6515af"><td class="memItemLeft" align="right" valign="top"><a id="aeac73462f78401dc99e38206ae6515af" name="aeac73462f78401dc99e38206ae6515af"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:aeac73462f78401dc99e38206ae6515af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#aeac73462f78401dc99e38206ae6515af">begin</a> ()</td></tr>
+<tr class="memdesc:aeac73462f78401dc99e38206ae6515af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the TCS3200 sensor and configure pins.  <br /></td></tr>
 <tr class="separator:aeac73462f78401dc99e38206ae6515af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e386e9f16dede2494472fe3d4bb96ec"><td class="memItemLeft" align="right" valign="top"><a id="a3e386e9f16dede2494472fe3d4bb96ec" name="a3e386e9f16dede2494472fe3d4bb96ec"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_red</b> ()</td></tr>
+<tr class="memitem:a3e386e9f16dede2494472fe3d4bb96ec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a3e386e9f16dede2494472fe3d4bb96ec">read_red</a> ()</td></tr>
+<tr class="memdesc:a3e386e9f16dede2494472fe3d4bb96ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the intensity of the red color channel.  <br /></td></tr>
 <tr class="separator:a3e386e9f16dede2494472fe3d4bb96ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a991043224335f940a0d59731e88a8a51"><td class="memItemLeft" align="right" valign="top"><a id="a991043224335f940a0d59731e88a8a51" name="a991043224335f940a0d59731e88a8a51"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_green</b> ()</td></tr>
+<tr class="memitem:a991043224335f940a0d59731e88a8a51"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a991043224335f940a0d59731e88a8a51">read_green</a> ()</td></tr>
+<tr class="memdesc:a991043224335f940a0d59731e88a8a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the intensity of the green color channel.  <br /></td></tr>
 <tr class="separator:a991043224335f940a0d59731e88a8a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f501f2d394ae63e32f98c7b44767e0"><td class="memItemLeft" align="right" valign="top"><a id="a43f501f2d394ae63e32f98c7b44767e0" name="a43f501f2d394ae63e32f98c7b44767e0"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_blue</b> ()</td></tr>
+<tr class="memitem:a43f501f2d394ae63e32f98c7b44767e0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a43f501f2d394ae63e32f98c7b44767e0">read_blue</a> ()</td></tr>
+<tr class="memdesc:a43f501f2d394ae63e32f98c7b44767e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the intensity of the blue color channel.  <br /></td></tr>
 <tr class="separator:a43f501f2d394ae63e32f98c7b44767e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5415c72489688e8b55d96f8080e8dd50"><td class="memItemLeft" align="right" valign="top"><a id="a5415c72489688e8b55d96f8080e8dd50" name="a5415c72489688e8b55d96f8080e8dd50"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_clear</b> ()</td></tr>
+<tr class="memitem:a5415c72489688e8b55d96f8080e8dd50"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a5415c72489688e8b55d96f8080e8dd50">read_clear</a> ()</td></tr>
+<tr class="memdesc:a5415c72489688e8b55d96f8080e8dd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the intensity of the clear (ambient) color channel.  <br /></td></tr>
 <tr class="separator:a5415c72489688e8b55d96f8080e8dd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a336f771cede7a3c5dd8d911f37b38600"><td class="memItemLeft" align="right" valign="top"><a id="a336f771cede7a3c5dd8d911f37b38600" name="a336f771cede7a3c5dd8d911f37b38600"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calibrate</b> ()</td></tr>
+<tr class="memitem:a336f771cede7a3c5dd8d911f37b38600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a336f771cede7a3c5dd8d911f37b38600">calibrate</a> ()</td></tr>
+<tr class="memdesc:a336f771cede7a3c5dd8d911f37b38600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform definition of the sensor as calibrated.  <br /></td></tr>
 <tr class="separator:a336f771cede7a3c5dd8d911f37b38600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29c6b4bcd99daa8b466c4cd7ce4211f4"><td class="memItemLeft" align="right" valign="top"><a id="a29c6b4bcd99daa8b466c4cd7ce4211f4" name="a29c6b4bcd99daa8b466c4cd7ce4211f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calibrate_light</b> ()</td></tr>
+<tr class="memitem:a29c6b4bcd99daa8b466c4cd7ce4211f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a29c6b4bcd99daa8b466c4cd7ce4211f4">calibrate_light</a> ()</td></tr>
+<tr class="memdesc:a29c6b4bcd99daa8b466c4cd7ce4211f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform light calibration for white balancing.  <br /></td></tr>
 <tr class="separator:a29c6b4bcd99daa8b466c4cd7ce4211f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af839c421147ebbc887bd4ddcd32f9cf8"><td class="memItemLeft" align="right" valign="top"><a id="af839c421147ebbc887bd4ddcd32f9cf8" name="af839c421147ebbc887bd4ddcd32f9cf8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calibrate_dark</b> ()</td></tr>
+<tr class="memitem:af839c421147ebbc887bd4ddcd32f9cf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#af839c421147ebbc887bd4ddcd32f9cf8">calibrate_dark</a> ()</td></tr>
+<tr class="memdesc:af839c421147ebbc887bd4ddcd32f9cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform dark calibration for white balancing.  <br /></td></tr>
 <tr class="separator:af839c421147ebbc887bd4ddcd32f9cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c408005da01e492ffd19d201f16c957"><td class="memItemLeft" align="right" valign="top"><a id="a3c408005da01e492ffd19d201f16c957" name="a3c408005da01e492ffd19d201f16c957"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>integration_time</b> (unsigned int time)</td></tr>
+<tr class="memitem:a3c408005da01e492ffd19d201f16c957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a3c408005da01e492ffd19d201f16c957">integration_time</a> (unsigned int time)</td></tr>
+<tr class="memdesc:a3c408005da01e492ffd19d201f16c957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the integration time for color sensing.  <br /></td></tr>
 <tr class="separator:a3c408005da01e492ffd19d201f16c957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a683a7efcf2bbf79d5290cb0b4cc56c14"><td class="memItemLeft" align="right" valign="top"><a id="a683a7efcf2bbf79d5290cb0b4cc56c14" name="a683a7efcf2bbf79d5290cb0b4cc56c14"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>integration_time</b> ()</td></tr>
+<tr class="memitem:a683a7efcf2bbf79d5290cb0b4cc56c14"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a683a7efcf2bbf79d5290cb0b4cc56c14">integration_time</a> ()</td></tr>
+<tr class="memdesc:a683a7efcf2bbf79d5290cb0b4cc56c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current integration time setting.  <br /></td></tr>
 <tr class="separator:a683a7efcf2bbf79d5290cb0b4cc56c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60a73460b85adff842240a8ff1bfcd2a"><td class="memItemLeft" align="right" valign="top"><a id="a60a73460b85adff842240a8ff1bfcd2a" name="a60a73460b85adff842240a8ff1bfcd2a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>frequency_scaling</b> (int scaling)</td></tr>
+<tr class="memitem:a60a73460b85adff842240a8ff1bfcd2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a60a73460b85adff842240a8ff1bfcd2a">frequency_scaling</a> (int scaling)</td></tr>
+<tr class="memdesc:a60a73460b85adff842240a8ff1bfcd2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency scaling for color sensing.  <br /></td></tr>
 <tr class="separator:a60a73460b85adff842240a8ff1bfcd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac889bff96deb3a8f383b942ebb8e2333"><td class="memItemLeft" align="right" valign="top"><a id="ac889bff96deb3a8f383b942ebb8e2333" name="ac889bff96deb3a8f383b942ebb8e2333"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>frequency_scaling</b> ()</td></tr>
+<tr class="memitem:ac889bff96deb3a8f383b942ebb8e2333"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#ac889bff96deb3a8f383b942ebb8e2333">frequency_scaling</a> ()</td></tr>
+<tr class="memdesc:ac889bff96deb3a8f383b942ebb8e2333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current frequency scaling setting.  <br /></td></tr>
 <tr class="separator:ac889bff96deb3a8f383b942ebb8e2333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1bc1b09d1dbec67d06bc69f03692588"><td class="memItemLeft" align="right" valign="top"><a id="ad1bc1b09d1dbec67d06bc69f03692588" name="ad1bc1b09d1dbec67d06bc69f03692588"></a>
-<a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_rgb_color</b> ()</td></tr>
+<tr class="memitem:ad1bc1b09d1dbec67d06bc69f03692588"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#ad1bc1b09d1dbec67d06bc69f03692588">read_rgb_color</a> ()</td></tr>
+<tr class="memdesc:ad1bc1b09d1dbec67d06bc69f03692588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the RGB color values from the sensor.  <br /></td></tr>
 <tr class="separator:ad1bc1b09d1dbec67d06bc69f03692588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac36ee3150c77d439f785b28b6e6c9762"><td class="memItemLeft" align="right" valign="top"><a id="ac36ee3150c77d439f785b28b6e6c9762" name="ac36ee3150c77d439f785b28b6e6c9762"></a>
-<a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>white_balance</b> ()</td></tr>
+<tr class="memitem:ac36ee3150c77d439f785b28b6e6c9762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#ac36ee3150c77d439f785b28b6e6c9762">white_balance</a> ()</td></tr>
+<tr class="memdesc:ac36ee3150c77d439f785b28b6e6c9762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current white balance RGB values.  <br /></td></tr>
 <tr class="separator:ac36ee3150c77d439f785b28b6e6c9762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d7d1e5a53aec439169cd960d9b712d"><td class="memItemLeft" align="right" valign="top"><a id="aa6d7d1e5a53aec439169cd960d9b712d" name="aa6d7d1e5a53aec439169cd960d9b712d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>white_balance</b> (<a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> white_balance_rgb)</td></tr>
+<tr class="memitem:aa6d7d1e5a53aec439169cd960d9b712d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#aa6d7d1e5a53aec439169cd960d9b712d">white_balance</a> (<a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> white_balance_rgb)</td></tr>
+<tr class="memdesc:aa6d7d1e5a53aec439169cd960d9b712d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the white balance RGB values.  <br /></td></tr>
 <tr class="separator:aa6d7d1e5a53aec439169cd960d9b712d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a513dde53a059b7fa774f2bf123cd4891"><td class="memItemLeft" align="right" valign="top"><a id="a513dde53a059b7fa774f2bf123cd4891" name="a513dde53a059b7fa774f2bf123cd4891"></a>
-<a class="el" href="../../d4/dc0/struct___h_s_v_color.html">HSVColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_hsv</b> ()</td></tr>
+<tr class="memitem:a513dde53a059b7fa774f2bf123cd4891"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d66/tcs3200_8h.html#ac31744810a2184c739befbe6755e2283">HSVColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a513dde53a059b7fa774f2bf123cd4891">read_hsv</a> ()</td></tr>
+<tr class="memdesc:a513dde53a059b7fa774f2bf123cd4891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the HSV color values from the sensor.  <br /></td></tr>
 <tr class="separator:a513dde53a059b7fa774f2bf123cd4891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87789935c8290176122f4ab53b3928a2"><td class="memItemLeft" align="right" valign="top"><a id="a87789935c8290176122f4ab53b3928a2" name="a87789935c8290176122f4ab53b3928a2"></a>
-<a class="el" href="../../d4/dd1/struct___c_m_y_k_color.html">CMYKColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_cmyk</b> ()</td></tr>
+<tr class="memitem:a87789935c8290176122f4ab53b3928a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d66/tcs3200_8h.html#a0108cb914f2923397b4c2f86f5c9bb74">CMYKColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a87789935c8290176122f4ab53b3928a2">read_cmyk</a> ()</td></tr>
+<tr class="memdesc:a87789935c8290176122f4ab53b3928a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the CMYK color values from the sensor.  <br /></td></tr>
 <tr class="separator:a87789935c8290176122f4ab53b3928a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7024ed721b3fd8f9b7adb749ce32b3"><td class="memItemLeft" align="right" valign="top"><a id="a5d7024ed721b3fd8f9b7adb749ce32b3" name="a5d7024ed721b3fd8f9b7adb749ce32b3"></a>
-<a class="el" href="../../dc/d69/struct___c_i_e1931.html">CIE1931Color</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_cie1931</b> ()</td></tr>
+<tr class="memitem:a5d7024ed721b3fd8f9b7adb749ce32b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d66/tcs3200_8h.html#a5ebafd937fa628446d9acf020d645f0a">CIE1931Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a5d7024ed721b3fd8f9b7adb749ce32b3">read_cie1931</a> ()</td></tr>
+<tr class="memdesc:a5d7024ed721b3fd8f9b7adb749ce32b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the CIE 1931 XYZ color values from the sensor.  <br /></td></tr>
 <tr class="separator:a5d7024ed721b3fd8f9b7adb749ce32b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf35989ab0fa3e059f058596a1a9b478"><td class="memItemLeft" align="right" valign="top"><a id="aaf35989ab0fa3e059f058596a1a9b478" name="aaf35989ab0fa3e059f058596a1a9b478"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>get_chroma</b> ()</td></tr>
+<tr class="memitem:aaf35989ab0fa3e059f058596a1a9b478"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#aaf35989ab0fa3e059f058596a1a9b478">get_chroma</a> ()</td></tr>
+<tr class="memdesc:aaf35989ab0fa3e059f058596a1a9b478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the chroma of the current color readings.  <br /></td></tr>
 <tr class="separator:aaf35989ab0fa3e059f058596a1a9b478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e2ff957b0fc606a811f1320e3d372f1"><td class="memItemLeft" align="right" valign="top"><a id="a3e2ff957b0fc606a811f1320e3d372f1" name="a3e2ff957b0fc606a811f1320e3d372f1"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_rgb_dominant_color</b> ()</td></tr>
+<tr class="memitem:a3e2ff957b0fc606a811f1320e3d372f1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a3e2ff957b0fc606a811f1320e3d372f1">get_rgb_dominant_color</a> ()</td></tr>
+<tr class="memdesc:a3e2ff957b0fc606a811f1320e3d372f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dominant RGB color channel.  <br /></td></tr>
 <tr class="separator:a3e2ff957b0fc606a811f1320e3d372f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641fa6ba74836e23fcda973ac8a66598"><td class="memItemLeft" align="right" valign="top"><a id="a641fa6ba74836e23fcda973ac8a66598" name="a641fa6ba74836e23fcda973ac8a66598"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
+<tr class="memitem:a641fa6ba74836e23fcda973ac8a66598"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a641fa6ba74836e23fcda973ac8a66598">loop</a> ()</td></tr>
+<tr class="memdesc:a641fa6ba74836e23fcda973ac8a66598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continuously monitor color intensity values and trigger callbacks for interrupt conditions.  <br /></td></tr>
 <tr class="separator:a641fa6ba74836e23fcda973ac8a66598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad94dbe2b878a778b33569ef6d17e5cdd"><td class="memItemLeft" align="right" valign="top"><a id="ad94dbe2b878a778b33569ef6d17e5cdd" name="ad94dbe2b878a778b33569ef6d17e5cdd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>upper_bound_interrupt</b> (<a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> threshold, void(*callback)())</td></tr>
+<tr class="memitem:ad94dbe2b878a778b33569ef6d17e5cdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#ad94dbe2b878a778b33569ef6d17e5cdd">upper_bound_interrupt</a> (<a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> threshold, void(*callback)())</td></tr>
+<tr class="memdesc:ad94dbe2b878a778b33569ef6d17e5cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable an upper bound interrupt with a given threshold.  <br /></td></tr>
 <tr class="separator:ad94dbe2b878a778b33569ef6d17e5cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a505530c850ce1fd13f25566eaf754371"><td class="memItemLeft" align="right" valign="top"><a id="a505530c850ce1fd13f25566eaf754371" name="a505530c850ce1fd13f25566eaf754371"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>lower_bound_interrupt</b> (<a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> threshold, void(*callback)())</td></tr>
+<tr class="memitem:a505530c850ce1fd13f25566eaf754371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a505530c850ce1fd13f25566eaf754371">lower_bound_interrupt</a> (<a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> threshold, void(*callback)())</td></tr>
+<tr class="memdesc:a505530c850ce1fd13f25566eaf754371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a lower bound interrupt with a given threshold.  <br /></td></tr>
 <tr class="separator:a505530c850ce1fd13f25566eaf754371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67d4f734948578fec3ad6e3ac7fee64"><td class="memItemLeft" align="right" valign="top"><a id="ad67d4f734948578fec3ad6e3ac7fee64" name="ad67d4f734948578fec3ad6e3ac7fee64"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_upper_bound_interrupt</b> ()</td></tr>
+<tr class="memitem:ad67d4f734948578fec3ad6e3ac7fee64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#ad67d4f734948578fec3ad6e3ac7fee64">clear_upper_bound_interrupt</a> ()</td></tr>
+<tr class="memdesc:ad67d4f734948578fec3ad6e3ac7fee64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the upper bound interrupt.  <br /></td></tr>
 <tr class="separator:ad67d4f734948578fec3ad6e3ac7fee64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83e9f544eef0c75b7c3e3dc73ee82de1"><td class="memItemLeft" align="right" valign="top"><a id="a83e9f544eef0c75b7c3e3dc73ee82de1" name="a83e9f544eef0c75b7c3e3dc73ee82de1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_lower_bound_interrupt</b> ()</td></tr>
+<tr class="memitem:a83e9f544eef0c75b7c3e3dc73ee82de1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a83e9f544eef0c75b7c3e3dc73ee82de1">clear_lower_bound_interrupt</a> ()</td></tr>
+<tr class="memdesc:a83e9f544eef0c75b7c3e3dc73ee82de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the lower bound interrupt.  <br /></td></tr>
 <tr class="separator:a83e9f544eef0c75b7c3e3dc73ee82de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51a376cc9ba1cef450d5e2a36b83b497"><td class="memTemplParams" colspan="2"><a id="a51a376cc9ba1cef450d5e2a36b83b497" name="a51a376cc9ba1cef450d5e2a36b83b497"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a51a376cc9ba1cef450d5e2a36b83b497"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>nearest_color</b> (T *color_labels, <a class="el" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> *color_values, int size)</td></tr>
+<tr class="memitem:a51a376cc9ba1cef450d5e2a36b83b497"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a51a376cc9ba1cef450d5e2a36b83b497"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_t_c_s3200.html#a51a376cc9ba1cef450d5e2a36b83b497">nearest_color</a> (T *color_labels, <a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> *color_values, int size)</td></tr>
+<tr class="memdesc:a51a376cc9ba1cef450d5e2a36b83b497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the nearest color label based on the current sensor readings.  <br /></td></tr>
 <tr class="separator:a51a376cc9ba1cef450d5e2a36b83b497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class representing the <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> color sensor. </p>
+<p>This class provides functions to interface with the TCS3200 color sensor, read color intensity values, perform calibration, white balancing, color space conversions, and nearest color detection. It also supports customization of integration time and frequency scaling. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7c90816fe4acde66b94e1646ee85cdc7" name="a7c90816fe4acde66b94e1646ee85cdc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c90816fe4acde66b94e1646ee85cdc7">&#9670;&#160;</a></span>TCS3200()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TCS3200::TCS3200 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>s0_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>s1_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>s2_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>s3_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>out_pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s0_pin</td><td>Arduino pin connected to S0 pin of the TCS3200. </td></tr>
+    <tr><td class="paramname">s1_pin</td><td>Arduino pin connected to S1 pin of the TCS3200. </td></tr>
+    <tr><td class="paramname">s2_pin</td><td>Arduino pin connected to S2 pin of the TCS3200. </td></tr>
+    <tr><td class="paramname">s3_pin</td><td>Arduino pin connected to S3 pin of the TCS3200. </td></tr>
+    <tr><td class="paramname">out_pin</td><td>Arduino pin connected to OUT pin of the TCS3200. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeac73462f78401dc99e38206ae6515af" name="aeac73462f78401dc99e38206ae6515af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac73462f78401dc99e38206ae6515af">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the TCS3200 sensor and configure pins. </p>
+
+</div>
+</div>
+<a id="a336f771cede7a3c5dd8d911f37b38600" name="a336f771cede7a3c5dd8d911f37b38600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336f771cede7a3c5dd8d911f37b38600">&#9670;&#160;</a></span>calibrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::calibrate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform definition of the sensor as calibrated. </p>
+<p>This function defines the sensor as calibrated for the next reading to be more accurate. This function must be invoked after calling the functions <code><a class="el" href="../../d5/d46/class_t_c_s3200.html#a29c6b4bcd99daa8b466c4cd7ce4211f4" title="Perform light calibration for white balancing.">calibrate_light()</a></code> and <code><a class="el" href="../../d5/d46/class_t_c_s3200.html#af839c421147ebbc887bd4ddcd32f9cf8" title="Perform dark calibration for white balancing.">calibrate_dark()</a></code>. </p>
+
+</div>
+</div>
+<a id="af839c421147ebbc887bd4ddcd32f9cf8" name="af839c421147ebbc887bd4ddcd32f9cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af839c421147ebbc887bd4ddcd32f9cf8">&#9670;&#160;</a></span>calibrate_dark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::calibrate_dark </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform dark calibration for white balancing. </p>
+<p>This function reads color intensity values from the sensor under a dark surface and calculates the average values for each color channel. These values are used for white balancing future color readings. </p>
+
+</div>
+</div>
+<a id="a29c6b4bcd99daa8b466c4cd7ce4211f4" name="a29c6b4bcd99daa8b466c4cd7ce4211f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c6b4bcd99daa8b466c4cd7ce4211f4">&#9670;&#160;</a></span>calibrate_light()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::calibrate_light </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform light calibration for white balancing. </p>
+<p>This function reads color intensity values from the sensor under a well-lit white surface and calculates the average values for each color channel. These values are used for white balancing future color readings. </p>
+
+</div>
+</div>
+<a id="a83e9f544eef0c75b7c3e3dc73ee82de1" name="a83e9f544eef0c75b7c3e3dc73ee82de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e9f544eef0c75b7c3e3dc73ee82de1">&#9670;&#160;</a></span>clear_lower_bound_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::clear_lower_bound_interrupt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the lower bound interrupt. </p>
+<p>The previously registered callback function will no longer be executed when the condition is met. </p>
+
+</div>
+</div>
+<a id="ad67d4f734948578fec3ad6e3ac7fee64" name="ad67d4f734948578fec3ad6e3ac7fee64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67d4f734948578fec3ad6e3ac7fee64">&#9670;&#160;</a></span>clear_upper_bound_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::clear_upper_bound_interrupt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the upper bound interrupt. </p>
+<p>The previously registered callback function will no longer be executed when the condition is met. </p>
+
+</div>
+</div>
+<a id="ac889bff96deb3a8f383b942ebb8e2333" name="ac889bff96deb3a8f383b942ebb8e2333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac889bff96deb3a8f383b942ebb8e2333">&#9670;&#160;</a></span>frequency_scaling() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TCS3200::frequency_scaling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current frequency scaling setting. </p>
+<dl class="section return"><dt>Returns</dt><dd>Frequency scaling value. </dd></dl>
+
+</div>
+</div>
+<a id="a60a73460b85adff842240a8ff1bfcd2a" name="a60a73460b85adff842240a8ff1bfcd2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a73460b85adff842240a8ff1bfcd2a">&#9670;&#160;</a></span>frequency_scaling() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::frequency_scaling </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scaling</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the frequency scaling for color sensing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scaling</td><td>Frequency scaling value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf35989ab0fa3e059f058596a1a9b478" name="aaf35989ab0fa3e059f058596a1a9b478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf35989ab0fa3e059f058596a1a9b478">&#9670;&#160;</a></span>get_chroma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TCS3200::get_chroma </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the chroma of the current color readings. </p>
+<p>Chroma represents the vividness or saturation of a color. It is calculated as the Euclidean distance of the color from the white point in the CIE 1931 XYZ color space.</p>
+<p class="formulaDsp">
+\begin{equation}
+\text{Chroma} = \sqrt{(X - 0.95047)^2 + (Y - 1.0)^2 + (Z - 1.08883)^2}
+\end{equation}
+</p>
+<dl class="section return"><dt>Returns</dt><dd>Chroma value. </dd></dl>
+
+</div>
+</div>
+<a id="a3e2ff957b0fc606a811f1320e3d372f1" name="a3e2ff957b0fc606a811f1320e3d372f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e2ff957b0fc606a811f1320e3d372f1">&#9670;&#160;</a></span>get_rgb_dominant_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TCS3200::get_rgb_dominant_color </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the dominant RGB color channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Dominant RGB color channel. </dd></dl>
+
+</div>
+</div>
+<a id="a683a7efcf2bbf79d5290cb0b4cc56c14" name="a683a7efcf2bbf79d5290cb0b4cc56c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683a7efcf2bbf79d5290cb0b4cc56c14">&#9670;&#160;</a></span>integration_time() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TCS3200::integration_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current integration time setting. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integration time in microseconds. </dd></dl>
+
+</div>
+</div>
+<a id="a3c408005da01e492ffd19d201f16c957" name="a3c408005da01e492ffd19d201f16c957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c408005da01e492ffd19d201f16c957">&#9670;&#160;</a></span>integration_time() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::integration_time </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the integration time for color sensing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Integration time in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a641fa6ba74836e23fcda973ac8a66598" name="a641fa6ba74836e23fcda973ac8a66598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641fa6ba74836e23fcda973ac8a66598">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Continuously monitor color intensity values and trigger callbacks for interrupt conditions. </p>
+<p>This function should be called repeatedly in the main loop of your Arduino sketch to continuously monitor color intensity values from the sensor. If any interrupt conditions have been set using the <code><a class="el" href="../../d5/d46/class_t_c_s3200.html#ad94dbe2b878a778b33569ef6d17e5cdd" title="Enable an upper bound interrupt with a given threshold.">upper_bound_interrupt()</a></code> or <code><a class="el" href="../../d5/d46/class_t_c_s3200.html#a505530c850ce1fd13f25566eaf754371" title="Enable a lower bound interrupt with a given threshold.">lower_bound_interrupt()</a></code> functions, the corresponding registered callback functions will be executed when the color intensity values meet the specified conditions.</p>
+<p>For example, if an upper bound interrupt is set with a certain threshold color intensity, the callback function will be executed when the RGB color intensity values exceed the threshold. Similarly, if a lower bound interrupt is set, the callback function will be executed when the RGB color intensity values go below the threshold. </p>
+
+</div>
+</div>
+<a id="a505530c850ce1fd13f25566eaf754371" name="a505530c850ce1fd13f25566eaf754371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505530c850ce1fd13f25566eaf754371">&#9670;&#160;</a></span>lower_bound_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::lower_bound_interrupt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a>&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)()&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable a lower bound interrupt with a given threshold. </p>
+<p>When the color intensity values go below the threshold, the registered callback function will be executed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threshold</td><td><code>RGBColor</code> threshold for the lower bound interrupt. </td></tr>
+    <tr><td class="paramname">callback</td><td>Function pointer to the callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a51a376cc9ba1cef450d5e2a36b83b497" name="a51a376cc9ba1cef450d5e2a36b83b497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a376cc9ba1cef450d5e2a36b83b497">&#9670;&#160;</a></span>nearest_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T TCS3200::nearest_color </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>color_labels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> *&#160;</td>
+          <td class="paramname"><em>color_values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the nearest color label based on the current sensor readings. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the color label (e.g., String, char[]).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color_labels</td><td>Array of color labels. </td></tr>
+    <tr><td class="paramname">color_values</td><td>Array of corresponding RGBColor values. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the arrays.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nearest color label of type T. </dd></dl>
+
+</div>
+</div>
+<a id="a43f501f2d394ae63e32f98c7b44767e0" name="a43f501f2d394ae63e32f98c7b44767e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f501f2d394ae63e32f98c7b44767e0">&#9670;&#160;</a></span>read_blue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TCS3200::read_blue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the intensity of the blue color channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Blue color intensity (0-255). </dd></dl>
+
+</div>
+</div>
+<a id="a5d7024ed721b3fd8f9b7adb749ce32b3" name="a5d7024ed721b3fd8f9b7adb749ce32b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d7024ed721b3fd8f9b7adb749ce32b3">&#9670;&#160;</a></span>read_cie1931()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d66/tcs3200_8h.html#a5ebafd937fa628446d9acf020d645f0a">CIE1931Color</a> TCS3200::read_cie1931 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the CIE 1931 XYZ color values from the sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>CIE1931Color representing the current color readings in the CIE 1931 XYZ color space. </dd></dl>
+
+</div>
+</div>
+<a id="a5415c72489688e8b55d96f8080e8dd50" name="a5415c72489688e8b55d96f8080e8dd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5415c72489688e8b55d96f8080e8dd50">&#9670;&#160;</a></span>read_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TCS3200::read_clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the intensity of the clear (ambient) color channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Clear color intensity (0-255). </dd></dl>
+
+</div>
+</div>
+<a id="a87789935c8290176122f4ab53b3928a2" name="a87789935c8290176122f4ab53b3928a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87789935c8290176122f4ab53b3928a2">&#9670;&#160;</a></span>read_cmyk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d66/tcs3200_8h.html#a0108cb914f2923397b4c2f86f5c9bb74">CMYKColor</a> TCS3200::read_cmyk </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the CMYK color values from the sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>CMYKColor representing the current color readings in the CMYK color space. </dd></dl>
+
+</div>
+</div>
+<a id="a991043224335f940a0d59731e88a8a51" name="a991043224335f940a0d59731e88a8a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991043224335f940a0d59731e88a8a51">&#9670;&#160;</a></span>read_green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TCS3200::read_green </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the intensity of the green color channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Green color intensity (0-255). </dd></dl>
+
+</div>
+</div>
+<a id="a513dde53a059b7fa774f2bf123cd4891" name="a513dde53a059b7fa774f2bf123cd4891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513dde53a059b7fa774f2bf123cd4891">&#9670;&#160;</a></span>read_hsv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d66/tcs3200_8h.html#ac31744810a2184c739befbe6755e2283">HSVColor</a> TCS3200::read_hsv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the HSV color values from the sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>HSVColor representing the current color readings in the HSV color space. </dd></dl>
+
+</div>
+</div>
+<a id="a3e386e9f16dede2494472fe3d4bb96ec" name="a3e386e9f16dede2494472fe3d4bb96ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e386e9f16dede2494472fe3d4bb96ec">&#9670;&#160;</a></span>read_red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TCS3200::read_red </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the intensity of the red color channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Red color intensity (0-255). </dd></dl>
+
+</div>
+</div>
+<a id="ad1bc1b09d1dbec67d06bc69f03692588" name="ad1bc1b09d1dbec67d06bc69f03692588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1bc1b09d1dbec67d06bc69f03692588">&#9670;&#160;</a></span>read_rgb_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> TCS3200::read_rgb_color </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the RGB color values from the sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>RGBColor</code> representing the current color readings. </dd></dl>
+
+</div>
+</div>
+<a id="ad94dbe2b878a778b33569ef6d17e5cdd" name="ad94dbe2b878a778b33569ef6d17e5cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94dbe2b878a778b33569ef6d17e5cdd">&#9670;&#160;</a></span>upper_bound_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::upper_bound_interrupt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a>&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)()&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable an upper bound interrupt with a given threshold. </p>
+<p>When the color intensity values exceed the threshold, the registered callback function will be executed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threshold</td><td><code>RGBColor</code> threshold for the upper bound interrupt. </td></tr>
+    <tr><td class="paramname">callback</td><td>Function pointer to the callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac36ee3150c77d439f785b28b6e6c9762" name="ac36ee3150c77d439f785b28b6e6c9762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36ee3150c77d439f785b28b6e6c9762">&#9670;&#160;</a></span>white_balance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a> TCS3200::white_balance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current white balance RGB values. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>RGBColor</code> representing white balance values. </dd></dl>
+
+</div>
+</div>
+<a id="aa6d7d1e5a53aec439169cd960d9b712d" name="aa6d7d1e5a53aec439169cd960d9b712d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d7d1e5a53aec439169cd960d9b712d">&#9670;&#160;</a></span>white_balance() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCS3200::white_balance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9">RGBColor</a>&#160;</td>
+          <td class="paramname"><em>white_balance_rgb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the white balance RGB values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">white_balance_rgb</td><td>RGBColor representing white balance values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../d8/d66/tcs3200_8h_source.html">tcs3200.h</a></li>
 <li>src/tcs3200.cpp</li>

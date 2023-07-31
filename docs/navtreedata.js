@@ -26,13 +26,33 @@ var NAVTREE =
 [
   [ "TCS3200 Arduino Library", "index.html", [
     [ "TCS3200 Color Sensor Arduino Library", "index.html", null ],
-    [ "Example Usage", "d5/d33/example.html", null ],
+    [ "Examples and Usage", "d5/d33/example.html", [
+      [ "Setup and Initialization", "d5/d33/example.html#autotoc_md7", null ],
+      [ "Calibration", "d5/d33/example.html#autotoc_md8", null ],
+      [ "Reading Color Intensity", "d5/d33/example.html#autotoc_md9", null ],
+      [ "Integration Time and Frequency Scaling", "d5/d33/example.html#autotoc_md10", null ],
+      [ "White Balancing", "d5/d33/example.html#autotoc_md11", null ],
+      [ "Color Space Conversions", "d5/d33/example.html#autotoc_md12", null ],
+      [ "Nearest Color Detection", "d5/d33/example.html#autotoc_md13", null ],
+      [ "Interrupt Callbacks", "d5/d33/example.html#autotoc_md14", null ],
+      [ "Integration in the Loop", "d5/d33/example.html#autotoc_md15", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ]
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

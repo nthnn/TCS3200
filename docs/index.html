@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li class="level2"><a href="#autotoc_md2">Algorithm Overview</a></li>
 <li class="level2"><a href="#autotoc_md3">Mathematical Equations</a><ul><li class="level3"><a href="#autotoc_md4">HSV Color Space Conversion</a></li>
 <li class="level3"><a href="#autotoc_md5">CMYK Color Space Conversion</a></li>
+<li class="level3"><a href="#autotoc_md6">CIE 1931 XYZ Color Space Conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -122,7 +123,7 @@ Understanding the TCS3200 Color Sensor</h2>
 <p>To achieve accurate color sensing, the TCS3200 library employs both frequency and analog output modes to calibrate and interpret color data. Additionally, the library allows users to customize the integration time and frequency scaling of the sensor to optimize performance for specific applications.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Algorithm Overview</h2>
-<p>The <a class="el" href="d5/d46/class_t_c_s3200.html">TCS3200</a> Arduino Library is designed with simplicity and extensibility in mind. It offers a wide range of functionalities, from basic color sensing to advanced features like white balancing, color space conversions, and nearest color detection.</p>
+<p>The <a class="el" href="d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> Arduino Library is designed with simplicity and extensibility in mind. It offers a wide range of functionalities, from basic color sensing to advanced features like white balancing, color space conversions, and nearest color detection.</p>
 <p>Here's an overview of the key functions and their roles in the library:</p>
 <ul>
 <li><p class="startli"><b>Initialization</b></p>
@@ -186,8 +187,47 @@ H = \begin{cases}
 </p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 CMYK Color Space Conversion</h3>
-<p>The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color </p>
-</div></div><!-- PageDoc -->
+<p>The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color.</p>
+<p>The conversion from RGB to CMYK is achieved using the following equations:</p>
+<p class="formulaDsp">
+\begin{equation}
+K = 1 - max(R,G,B)
+\end{equation}
+</p>
+<p class="formulaDsp">
+\begin{equation}
+C = \frac{1-R-K}{1-K}
+\end{equation}
+</p>
+<p class="formulaDsp">
+\begin{equation}
+M = \frac{1-G-K}{1-K}
+\end{equation}
+</p>
+<p class="formulaDsp">
+\begin{equation}
+Y = \frac{1-B-K}{1-K}
+\end{equation}
+</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+CIE 1931 XYZ Color Space Conversion</h3>
+<p>The CIE 1931 XYZ color space is a standard color space based on human color perception. It consists of three components: X, Y, and Z. The conversion from RGB to CIE 1931 XYZ is achieved using the following equations:</p>
+<p class="formulaDsp">
+\begin{equation}
+X = 0.4124564 × R + 0.3575761 × G + 0.1804375 × B
+\end{equation}
+</p>
+<p class="formulaDsp">
+\begin{equation}
+Y = 0.2126729 × R + 0.7151522 × G + 0.0721750 × B
+\end{equation}
+</p>
+<p class="formulaDsp">
+\begin{equation}
+Z = 0.0193339 × R + 0.1191920 × G + 0.9503041 × B
+\end{equation}
+</p>
+ </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="nav-path" class="navpath">
