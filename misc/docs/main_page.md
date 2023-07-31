@@ -85,13 +85,228 @@ H = \begin{cases}
 
 ### CMYK Color Space Conversion
 
-The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color
+The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color.
 
-@page example Example Usage
+The conversion from RGB to CMYK is achieved using the following equations:
+
+\f{equation}{
+K = 1 - max(R,G,B)
+\f}
+
+\f{equation}{
+C = \frac{1-R-K}{1-K}
+\f}
+
+\f{equation}{
+M = \frac{1-G-K}{1-K}
+\f}
+
+\f{equation}{
+Y = \frac{1-B-K}{1-K}
+\f}
+
+### CIE 1931 XYZ Color Space Conversion
+
+The CIE 1931 XYZ color space is a standard color space based on human color perception. It consists of three components: X, Y, and Z. The conversion from RGB to CIE 1931 XYZ is achieved using the following equations:
+
+\f{equation}{
+X = 0.4124564 × R + 0.3575761 × G + 0.1804375 × B
+\f}
+
+\f{equation}{
+Y = 0.2126729 × R + 0.7151522 × G + 0.0721750 × B
+\f}
+
+\f{equation}{
+Z = 0.0193339 × R + 0.1191920 × G + 0.9503041 × B
+\f}
+
+@page example Examples and Usage
+@brief This page contains the comprehensive list of examples and usage of TCS3200 Arduino library.
 @tableofcontents
 
-## Full Example
+# Setup and Initialization
+
+To use the %TCS3200 Arduino Library, include the "tcs3200.h" header file and create an instance of the TCS3200 class.
+Use the `begin()` function to initialize the %TCS3200 sensor, configure pins, and set default integration time
+and frequency scaling.
 
 ```cpp
+#include "tcs3200.h"
 
+// Pin assignments for S0, S1, S2, S3, and OUT pins
+#define S0_PIN 2
+#define S1_PIN 3
+#define S2_PIN 4
+#define S3_PIN 5
+#define OUT_PIN 6
+
+// Create an instance of TCS3200
+TCS3200 colorSensor(S0_PIN, S1_PIN, S2_PIN, S3_PIN, OUT_PIN);
+
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+}
+```
+
+# Calibration
+
+The %TCS3200 sensor requires calibration for accurate color sensing. Calibration involves capturing readings
+for both the lightest and darkest colors to establish the range for color intensity mapping. Use the `calibrate()`
+function to enable calibration mode, and after invoking `calibrate_light()` and `calibrate_dark()` functions to calibrate
+the sensor with white and black reference colors, respectively.
+
+```cpp
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+
+    // Perform the actual calibration
+    Serial.println("Please face the sensor to light surface.");
+    colorSensor.calibrate_light(); // Calibrate with a white reference color
+    delay(2000);
+
+    Serial.println("Please face the sensor to dark surface.");
+    colorSensor.calibrate_dark();  // Calibrate with a black reference color
+
+    colorSensor.calibrate();
+}
+```
+
+# Reading Color Intensity
+
+To obtain color intensity values for individual color channels (red, green, blue, and clear), use the following functions:
+`read_red()`, `read_green()`, `read_blue()`, and `read_clear()`. The `read_rgb_color()` function returns the RGB color
+intensity values as an RGBColor structure.
+
+```cpp
+void loop() {
+    // Read color intensity values for individual color channels
+    uint8_t redIntensity = colorSensor.read_red();
+    uint8_t greenIntensity = colorSensor.read_green();
+    uint8_t blueIntensity = colorSensor.read_blue();
+    uint8_t clearIntensity = colorSensor.read_clear();
+
+    // Or read RGB color intensity values as an RGBColor structure
+    RGBColor color = colorSensor.read_rgb_color();
+}
+```
+
+# Integration Time and Frequency Scaling
+
+The library provides control over the integration time and frequency scaling of the %TCS3200 sensor. Integration time
+is set using the `integration_time()` function, and frequency scaling is set using the `frequency_scaling()` function.
+Integration time affects the accuracy and sensitivity of color measurements, while frequency scaling optimizes the trade-off
+between accuracy and response time.
+
+```cpp
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+
+    // Set integration time to 2500 milliseconds (2.5 seconds)
+    colorSensor.integration_time(2500);
+
+    // Set frequency scaling to 20%
+    colorSensor.frequency_scaling(TCS3200_OFREQ_20P);
+}
+```
+
+# White Balancing
+
+White balancing is essential for achieving accurate color measurements. It allows users to calibrate the sensor based on a
+known white reference color. Use the `white_balance()` function to set the white balance with an RGBColor structure, and
+`white_balance()` to retrieve the current white balance settings.
+
+```cpp
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+
+    // Perform white balancing with a known white reference color (255, 255, 255)
+    RGBColor whiteReference = {255, 255, 255};
+    colorSensor.white_balance(whiteReference);
+}
+```
+
+# Color Space Conversions
+
+The %TCS3200 library supports color space conversions from RGB to other color spaces, including HSV, CMYK, and CIE 1931 XYZ.
+Use the corresponding functions (`read_hsv()`, `read_cmyk()`, and `read_cie1931()`) to obtain color representations in
+the desired color space.
+
+```cpp
+void loop() {
+    // Read color in HSV color space
+    HSVColor hsvColor = colorSensor.read_hsv();
+
+    // Read color in CMYK color space
+    CMYKColor cmykColor = colorSensor.read_cmyk();
+
+    // Read color in CIE 1931 XYZ color space
+    CIE1931Color cie1931Color = colorSensor.read_cie1931();
+}
+```
+
+# Nearest Color Detection
+The library provides a template function `nearest_color()` that allows users to find the nearest color label based on the
+current sensor readings. This is useful for applications like color classification and sorting.
+
+```cpp
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+
+    // Color labels and corresponding RGBColor values
+    String colorLabels[] = {"Red", "Green", "Blue", "Yellow", "Orange"};
+    RGBColor colorValues[] = {
+      {255, 0, 0},
+      {0, 255, 0},
+      {0, 0, 255},
+      {255, 255, 0},
+      {255, 165, 0}
+    };
+
+    // Find the nearest color label based on current sensor readings
+    String nearestColorLabel = colorSensor.nearest_color<String>(colorLabels, colorValues, 5);
+}
+```
+
+# Interrupt Callbacks
+
+The library allows users to define interrupt callbacks that trigger when the sensor readings exceed specified color thresholds. Use the `upper_bound_interrupt()` and `lower_bound_interrupt()` functions to set upper and lower color thresholds, respectively.
+
+```cpp
+// Define callback functions
+void upperThresholdExceeded() {
+    // Code to execute when the sensor readings exceed the upper threshold
+}
+
+void lowerThresholdExceeded() {
+    // Code to execute when the sensor readings fall below the lower threshold
+}
+
+void setup() {
+    // Initialize the sensor
+    colorSensor.begin();
+
+    // Set interrupt callbacks with upper and lower color thresholds
+    RGBColor upperThreshold = {200, 200, 200};
+    RGBColor lowerThreshold = {100, 100, 100};
+
+    colorSensor.upper_bound_interrupt(upperThreshold, upperThresholdExceeded);
+    colorSensor.lower_bound_interrupt(lowerThreshold, lowerThresholdExceeded);
+}
+```
+
+# Integration in the Loop
+
+The %TCS3200 library supports continuous color sensing and interrupt triggering in the loop. The `loop()` function should be called in the main loop to trigger interrupt callbacks if defined.
+
+```cpp
+void loop() {
+    // Perform color sensing and execute interrupt callbacks if thresholds are exceeded
+    colorSensor.loop();
+}
 ```
