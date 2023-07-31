@@ -42,42 +42,40 @@ void TCS3200::select_filter(uint8_t filter) {
 
 uint8_t TCS3200::read_red() {
     this->select_filter(TCS3200_COLOR_RED);
-    
+
     uint8_t red = pulseIn(this->_out_pin, LOW);
-    if(this->is_calibrated)
-        red = map(red, this->min_r, this->max_r, 255, 0);
+    red = this->is_calibrated ?
+        map(red, this->min_r, this->max_r, 255, 0) :
+        map(red, 0, 255, 255, 0);
 
     return red;
 }
 
 uint8_t TCS3200::read_green() {
     this->select_filter(TCS3200_COLOR_GREEN);
-    
+
     uint8_t green = pulseIn(this->_out_pin, LOW);
-    if(this->is_calibrated)
-        green = map(green, this->min_g, this->max_g, 255, 0);
+    green = this->is_calibrated ?
+        map(green, this->min_g, this->max_g, 255, 0) :
+        map(green, 0, 255, 255, 0);
 
     return green;
 }
 
 uint8_t TCS3200::read_blue() {
     this->select_filter(TCS3200_COLOR_BLUE);
-    
+
     uint8_t blue = pulseIn(this->_out_pin, LOW);
-    if(this->is_calibrated)
-        blue = map(blue, this->min_b, this->max_b, 255, 0);
+    blue = this->is_calibrated ?
+        map(blue, this->min_b, this->max_b, 255, 0) :
+        map(blue, 0, 255, 255, 0);
 
     return blue;
 }
 
 uint8_t TCS3200::read_clear() {
     this->select_filter(TCS3200_COLOR_CLEAR);
-    
-    uint8_t clear = pulseIn(this->_out_pin, LOW);
-    if(this->is_calibrated)
-        clear = map(clear, this->min_c, this->max_c, 255, 0);
-
-    return clear;
+    return pulseIn(this->_out_pin, LOW);
 }
 
 void TCS3200::calibrate() {
@@ -92,7 +90,6 @@ void TCS3200::calibrate_light() {
         r += this->read_red();
         g += this->read_green();
         b += this->read_blue();
-        c += this->read_clear();
 
         delay(this->_integration_time / 10);
     }
@@ -100,7 +97,6 @@ void TCS3200::calibrate_light() {
     this->white_balance_rgb.red = this->min_r = r / 10;
     this->white_balance_rgb.green = this->min_g = g / 10;
     this->white_balance_rgb.blue = this->min_b = b / 10;
-    this->white_balance_rgb.clear = this->min_c = c / 10;
 }
 
 void TCS3200::calibrate_dark() {
@@ -119,7 +115,6 @@ void TCS3200::calibrate_dark() {
     this->max_r = r / 10;
     this->max_g = g / 10;
     this->max_b = b / 10;
-    this->min_c = c / 10;
 }
 
 void TCS3200::integration_time(unsigned int time) {
@@ -170,7 +165,6 @@ RGBColor TCS3200::read_rgb_color() {
     readings.red = this->read_red();
     readings.green = this->read_green();
     readings.blue = this->read_blue();
-    readings.clear = this->read_clear();
 
     return readings;
 }
@@ -307,26 +301,4 @@ void TCS3200::loop() {
         current_reading.green < this->lb_threshold.green &&
         current_reading.blue < this->lb_threshold.blue)
         this->lower_bound_interrupt_callback();
-}
-
-template <typename T>
-T TCS3200::nearest_color(T *color_labels, RGBColor *color_values, int size) {
-    T nearest;
-
-    RGBColor readings = this->read_rgb_color();
-    uint16_t min_dist = 0xffff;
-
-    for(int i = 0; i < size; i++) {
-        uint16_t dist = abs(readings.red - color_values[i].red) +
-                        abs(readings.green - color_values[i].green) +
-                        abs(readings.blue - color_values[i].blue) +
-                        abs(readings.clear - color_values[i].clear);
-
-        if(dist < min_dist) {
-            min_dist = dist;
-            nearest = color_labels[i];
-        }
-    }
-
-    return nearest;
 }

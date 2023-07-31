@@ -17,7 +17,6 @@ typedef struct _RGBColor {
     uint8_t red;
     uint8_t green;
     uint8_t blue;
-    uint8_t clear;
 } RGBColor;
 
 typedef struct _HSVColor {
@@ -79,12 +78,30 @@ public:
     void clear_lower_bound_interrupt();
 
     template <typename T>
-    T nearest_color(T *color_labels, RGBColor *color_values, int size);
+    T nearest_color(T *color_labels, RGBColor *color_values, int size) {
+        T nearest;
+
+        RGBColor readings = this->read_rgb_color();
+        uint16_t min_dist = 0xffff;
+
+        for(int i = 0; i < size; i++) {
+            uint16_t dist = abs(readings.red - color_values[i].red) +
+                            abs(readings.green - color_values[i].green) +
+                            abs(readings.blue - color_values[i].blue);
+
+            if(dist < min_dist) {
+                min_dist = dist;
+                nearest = color_labels[i];
+            }
+        }
+
+        return nearest;
+    }
 
 private:
     uint8_t _s0_pin, _s1_pin, _s2_pin, _s3_pin, _out_pin;
-    uint8_t max_r, max_g, max_b, max_c;
-    uint8_t min_r, min_g, min_b, min_c;
+    uint8_t max_r, max_g, max_b;
+    uint8_t min_r, min_g, min_b;
 
     unsigned int _integration_time;
     int _frequency_scaling;
