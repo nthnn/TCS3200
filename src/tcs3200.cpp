@@ -16,6 +16,7 @@ void TCS3200::begin() {
 
     this->_integration_time = 2000;
     this->_frequency_scaling = 1.0;
+    this->is_calibrated = false;
 }
 
 void TCS3200::select_filter(uint8_t filter) {
@@ -26,7 +27,7 @@ void TCS3200::select_filter(uint8_t filter) {
             break;
         case TCS3200_COLOR_GREEN:
             digitalWrite(this->_s2_pin, HIGH);
-            digitalWrite(this->_s3_pin, LOW);
+            digitalWrite(this->_s3_pin, HIGH);
             break;
         case TCS3200_COLOR_BLUE:
             digitalWrite(this->_s2_pin, LOW);
@@ -34,13 +35,13 @@ void TCS3200::select_filter(uint8_t filter) {
             break;
         case TCS3200_COLOR_CLEAR:
             digitalWrite(this->_s2_pin, HIGH);
-            digitalWrite(this->_s3_pin, HIGH);
+            digitalWrite(this->_s3_pin, LOW);
             break;
     }
 }
 
 uint8_t TCS3200::read_red() {
-    select_filter(TCS3200_COLOR_RED);
+    this->select_filter(TCS3200_COLOR_RED);
     
     uint8_t red = pulseIn(this->_out_pin, LOW);
     if(this->is_calibrated)
@@ -50,7 +51,7 @@ uint8_t TCS3200::read_red() {
 }
 
 uint8_t TCS3200::read_green() {
-    select_filter(TCS3200_COLOR_GREEN);
+    this->select_filter(TCS3200_COLOR_GREEN);
     
     uint8_t green = pulseIn(this->_out_pin, LOW);
     if(this->is_calibrated)
@@ -60,7 +61,7 @@ uint8_t TCS3200::read_green() {
 }
 
 uint8_t TCS3200::read_blue() {
-    select_filter(TCS3200_COLOR_BLUE);
+    this->select_filter(TCS3200_COLOR_BLUE);
     
     uint8_t blue = pulseIn(this->_out_pin, LOW);
     if(this->is_calibrated)
@@ -70,7 +71,7 @@ uint8_t TCS3200::read_blue() {
 }
 
 uint8_t TCS3200::read_clear() {
-    select_filter(TCS3200_COLOR_CLEAR);
+    this->select_filter(TCS3200_COLOR_CLEAR);
     
     uint8_t clear = pulseIn(this->_out_pin, LOW);
     if(this->is_calibrated)
@@ -84,7 +85,7 @@ void TCS3200::calibrate() {
 }
 
 void TCS3200::calibrate_light() {
-    uint8_t r, g, b, c;
+    uint8_t r = 0, g = 0, b = 0, c = 0;
 
     delay(this->_integration_time / 2);
     for(int i = 0; i < 10; i++) {
@@ -96,14 +97,14 @@ void TCS3200::calibrate_light() {
         delay(this->_integration_time / 10);
     }
 
-    this->min_r = r / 10;
-    this->min_g = g / 10;
-    this->min_b = b / 10;
-    this->min_c = c / 10;
+    this->white_balance_rgb.red = this->min_r = r / 10;
+    this->white_balance_rgb.green = this->min_g = g / 10;
+    this->white_balance_rgb.blue = this->min_b = b / 10;
+    this->white_balance_rgb.clear = this->min_c = c / 10;
 }
 
 void TCS3200::calibrate_dark() {
-    uint8_t r, g, b, c;
+    uint8_t r = 0, g = 0, b = 0, c = 0;
 
     delay(this->_integration_time / 2);
     for(int i = 0; i < 10; i++) {
@@ -129,11 +130,30 @@ unsigned int TCS3200::integration_time() {
     return this->_integration_time;
 }
 
-void TCS3200::frequency_scaling(float scaling) {
+void TCS3200::frequency_scaling(int scaling) {
     this->_frequency_scaling = scaling;
+
+    switch(this->_frequency_scaling) {
+        case TCS3200_PWR_DOWN:
+            digitalWrite(this->_s0_pin, LOW);
+            digitalWrite(this->_s1_pin, LOW);
+            break;
+        case TCS3200_OFREQ_2P:
+            digitalWrite(this->_s0_pin, LOW);
+            digitalWrite(this->_s1_pin, HIGH);
+            break;
+        case TCS3200_OFREQ_20P:
+            digitalWrite(this->_s0_pin, HIGH);
+            digitalWrite(this->_s1_pin, LOW);
+            break;
+        case TCS3200_OFREQ_100P:
+            digitalWrite(this->_s0_pin, HIGH);
+            digitalWrite(this->_s1_pin, HIGH);
+            break;
+    }
 }
 
-float TCS3200::frequency_scaling() {
+int TCS3200::frequency_scaling() {
     return this->_frequency_scaling;
 }
 
@@ -232,13 +252,9 @@ CIE1931Color TCS3200::read_cie1931() {
 float TCS3200::get_chroma() {
     CIE1931Color cie1931_color = this->read_cie1931();
 
-    float white_x = 0.95047;
-    float white_y = 1.0;
-    float white_z = 1.08883;
-
-    float dx = cie1931_color.x - white_x;
-    float dy = cie1931_color.y - white_y;
-    float dz = cie1931_color.z - white_z;
+    float dx = cie1931_color.x - 0.95047;
+    float dy = cie1931_color.y - 1.0;
+    float dz = cie1931_color.z - 1.08883;
 
     return sqrt(dx * dx + dy * dy + dz * dz);
 }
@@ -253,4 +269,64 @@ uint8_t TCS3200::get_rgb_dominant_color() {
         return TCS3200_COLOR_GREEN;
 
     return TCS3200_COLOR_BLUE;
+}
+
+void TCS3200::upper_bound_interrupt(RGBColor threshold, void (*callback)()) {
+    this->upper_bound_interrupt_callback = callback;
+    this->ub_threshold = threshold;
+}
+
+void TCS3200::lower_bound_interrupt(RGBColor threshold, void (*callback)()) {
+    this->lower_bound_interrupt_callback = callback;
+    this->lb_threshold = threshold;
+}
+
+void TCS3200::clear_upper_bound_interrupt() {
+    this->upper_bound_interrupt_callback = nullptr;
+}
+
+void TCS3200::clear_lower_bound_interrupt() {
+    this->lower_bound_interrupt_callback = nullptr;
+}
+
+void TCS3200::loop() {
+    if(this->upper_bound_interrupt_callback == nullptr &&
+        this->lower_bound_interrupt_callback == nullptr)
+        return;
+
+    RGBColor current_reading = this->read_rgb_color();
+
+    if(this->upper_bound_interrupt_callback != nullptr &&
+        current_reading.red > this->ub_threshold.red &&
+        current_reading.green > this->ub_threshold.green &&
+        current_reading.blue > this->ub_threshold.blue)
+        this->upper_bound_interrupt_callback();
+
+    if(this->lower_bound_interrupt_callback != nullptr &&
+        current_reading.red < this->lb_threshold.red &&
+        current_reading.green < this->lb_threshold.green &&
+        current_reading.blue < this->lb_threshold.blue)
+        this->lower_bound_interrupt_callback();
+}
+
+template <typename T>
+T TCS3200::nearest_color(T *color_labels, RGBColor *color_values, int size) {
+    T nearest;
+
+    RGBColor readings = this->read_rgb_color();
+    uint16_t min_dist = 0xffff;
+
+    for(int i = 0; i < size; i++) {
+        uint16_t dist = abs(readings.red - color_values[i].red) +
+                        abs(readings.green - color_values[i].green) +
+                        abs(readings.blue - color_values[i].blue) +
+                        abs(readings.clear - color_values[i].clear);
+
+        if(dist < min_dist) {
+            min_dist = dist;
+            nearest = color_labels[i];
+        }
+    }
+
+    return nearest;
 }
