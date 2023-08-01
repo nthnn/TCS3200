@@ -110,6 +110,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li class="level3"><a href="#autotoc_md6">CIE 1931 XYZ Color Space Conversion</a></li>
 </ul>
 </li>
+<li class="level2"><a href="#autotoc_md7">Getting Started</a></li>
+<li class="level2"><a href="#autotoc_md8">Examples</a></li>
+<li class="level2"><a href="#autotoc_md9">Contribution and Feedback</a></li>
 </ul>
 </ul>
 </div>
@@ -185,10 +188,14 @@ H = \begin{cases}
   \end{cases}
 \end{equation}
 </p>
+<p>As can be seen above, the conversion from RGB to HSV involves a series of mathematical operations to extract these components.</p>
+<p>First, we determine the maximum value among the RGB color components (red, green, and blue) to obtain the maximum intensity, which represents the value component ( \( V \) ) in HSV. Next, we calculate the difference between the maximum and minimum values among the RGB components, referred to as the color range ( \( \Delta \) ). The saturation ( \( S \) ) is then derived by dividing the color range ( \( \Delta \) ) by the maximum intensity ( \( V \) ), representing the purity of the color.</p>
+<p>Then finally, the hue ( \( H \) ) is computed based on the maximum intensity ( \( V \) ) and the color range ( \( \Delta \) ). Depending on which RGB component has the highest intensity, we use different formulas to calculate the hue. This process results in a color representation that is more intuitive for human perception and allows easy manipulation of color properties, making it useful in many applications, including color adjustments and visualizations.</p>
+<div align="center"> <img src="figure_1.png" alt="HSV Color Space Conversion Visual Key" class="inline"/> </div><p>Above, the graph plots the RGB components (Red, Green, and Blue) as functions of Hue while keeping the Saturation and Value fixed. By varying the Hue from 0 to 360 degrees, we can observe how the RGB components change to represent different colors on the color wheel.</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 CMYK Color Space Conversion</h3>
 <p>The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color.</p>
-<p>The conversion from RGB to CMYK is achieved using the following equations:</p>
+<p>Moreover, the CMYK color space is commonly used in color printing and represents colors using four primary components: cyan, magenta, yellow, and black. The conversion from RGB to CMYK is based on subtractive color mixing, where the primary colors subtract light from white to create various hues.</p>
 <p class="formulaDsp">
 \begin{equation}
 K = 1 - max(R,G,B)
@@ -209,9 +216,13 @@ M = \frac{1-G-K}{1-K}
 Y = \frac{1-B-K}{1-K}
 \end{equation}
 </p>
+<p>To convert RGB to CMYK, we first calculate the key color ( \( K \) ) component, which represents the amount of black needed to achieve the desired color. The key color is determined by finding the maximum value among the RGB components and subtracting it from 1. Next, we calculate the cyan, magenta, and yellow components by subtracting the corresponding RGB components from 1 and dividing by the key color ( \( K \) ). This process ensures that the CMYK color model effectively represents the proportions of each primary color required to reproduce a given color on a printed surface.</p>
+<div align="center"> <img src="figure_2.png" alt="CMYK Color Space Conversion Visual Key" class="inline"/> </div><p>The image above shows the RGB components as functions of Cyan while keeping Magenta and Yellow fixed. By varying the Cyan component from 0 to 1, we can observe how the RGB components change to represent different colors in the CMYK color space.</p>
 <h3><a class="anchor" id="autotoc_md6"></a>
 CIE 1931 XYZ Color Space Conversion</h3>
 <p>The CIE 1931 XYZ color space is a standard color space based on human color perception. It consists of three components: X, Y, and Z. The conversion from RGB to CIE 1931 XYZ is achieved using the following equations:</p>
+<p>Furthermore, this color space is a standardized color model developed by the International Commission on Illumination (CIE) to represent human color perception. It forms the foundation of many other color spaces and provides a device-independent representation of colors.</p>
+<p>The conversion from RGB to CIE 1931 XYZ involves a linear transformation of the RGB components using specific weighted coefficients. Each RGB component is multiplied by these coefficients, and the results are summed to obtain the X, Y, and Z components in the XYZ color space.</p>
 <p class="formulaDsp">
 \begin{equation}
 X = 0.4124564 × R + 0.3575761 × G + 0.1804375 × B
@@ -227,7 +238,36 @@ Y = 0.2126729 × R + 0.7151522 × G + 0.0721750 × B
 Z = 0.0193339 × R + 0.1191920 × G + 0.9503041 × B
 \end{equation}
 </p>
- </div></div><!-- PageDoc -->
+<p>The X, Y, and Z components represent the tristimulus values that correspond to the amount of red, green, and blue light emitted or reflected from a surface under a particular light source. The XYZ color space provides a mathematical model that allows accurate comparisons and transformations between colors, making it an essential tool for color science and various color-related applications.</p>
+<p>The graph below plots the CIE 1931 XYZ color space conversion from RGB (Red, Green, Blue). Where X, Y, and Z represents the tristimulus values, which are linear transformations of the RGB components. X, Y, and Z are not directly perceptible as colors but are used to derive other color spaces like CIE Lab* and CIE Luv*.</p>
+<div align="center"> <img src="figure_3.png" alt="CIE 1931 XYZ Space Conversion Visual Key" class="inline"/> </div><h2><a class="anchor" id="autotoc_md7"></a>
+Getting Started</h2>
+<p>To start using TCS3200 library in your Arduino projects, follow these simple steps:</p>
+<ol type="1">
+<li>Download the TCS3200 library from the GitHub repository.</li>
+<li>Extract the downloaded archive and rename the folder to "TCS3200".</li>
+<li>Move the "TCS3200" folder to the Arduino libraries directory on your computer.<ul>
+<li>Windows: <code>Documents\Arduino\libraries\</code></li>
+<li>MacOS: <code>~/Documents/Arduino/libraries/</code></li>
+<li>Linux: <code>~/Arduino/libraries/</code></li>
+</ul>
+</li>
+<li>Launch the Arduino IDE.</li>
+<li>Click on <code>Sketch &gt; Include Library &gt; TCS3200</code> to include the library in your sketch.</li>
+</ol>
+<p>You are now ready to use <a class="el" href="d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> library in your Arduino projects!</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Examples</h2>
+<p>To access the examples:</p>
+<ol type="1">
+<li>Open the Arduino IDE.</li>
+<li>Click on <code>File &gt; Examples &gt; TCS3200</code> to see the list of available examples.</li>
+<li>Upload the example sketch to your Arduino board and see the results in action.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Contribution and Feedback</h2>
+<p>Contributions and feedback are all welcome to enhance this library. If you encounter any issues, have suggestions for improvements, or would like to contribute code, please do so. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="nav-path" class="navpath">

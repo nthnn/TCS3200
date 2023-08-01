@@ -102,19 +102,19 @@ $(document).ready(function(){initNavTree('d5/d33/example.html','../../'); initRe
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md7">Setup and Initialization</a></li>
-<li class="level1"><a href="#autotoc_md8">Calibration</a></li>
-<li class="level1"><a href="#autotoc_md9">Reading Color Intensity</a></li>
-<li class="level1"><a href="#autotoc_md10">Integration Time and Frequency Scaling</a></li>
-<li class="level1"><a href="#autotoc_md11">White Balancing</a></li>
-<li class="level1"><a href="#autotoc_md12">Color Space Conversions</a></li>
-<li class="level1"><a href="#autotoc_md13">Nearest Color Detection</a></li>
-<li class="level1"><a href="#autotoc_md14">Interrupt Callbacks</a></li>
-<li class="level1"><a href="#autotoc_md15">Integration in the Loop</a></li>
+<ul><li class="level1"><a href="#autotoc_md10">Setup and Initialization</a></li>
+<li class="level1"><a href="#autotoc_md11">Calibration</a></li>
+<li class="level1"><a href="#autotoc_md12">Reading Color Intensity</a></li>
+<li class="level1"><a href="#autotoc_md13">Integration Time and Frequency Scaling</a></li>
+<li class="level1"><a href="#autotoc_md14">White Balancing</a></li>
+<li class="level1"><a href="#autotoc_md15">Color Space Conversions</a></li>
+<li class="level1"><a href="#autotoc_md16">Nearest Color Detection</a></li>
+<li class="level1"><a href="#autotoc_md17">Interrupt Callbacks</a></li>
+<li class="level1"><a href="#autotoc_md18">Integration in the Loop</a></li>
 </ul>
 </div>
 <div class="textblock"><p>This page contains the comprehensive list of examples and usage of <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> Arduino library.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Setup and Initialization</h1>
 <p>To use the TCS3200 Arduino Library, include the "tcs3200.h" header file and create an instance of the <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> class. Use the <code>begin()</code> function to initialize the TCS3200 sensor, configure pins, and set default integration time and frequency scaling.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d8/d66/tcs3200_8h.html">tcs3200.h</a>&quot;</span></div>
@@ -135,7 +135,7 @@ Setup and Initialization</h1>
 <div class="line">}</div>
 <div class="ttc" id="aclass_t_c_s3200_html"><div class="ttname"><a href="../../d5/d46/class_t_c_s3200.html">TCS3200</a></div><div class="ttdoc">Class representing the TCS3200 color sensor.</div><div class="ttdef"><b>Definition</b> tcs3200.h:109</div></div>
 <div class="ttc" id="atcs3200_8h_html"><div class="ttname"><a href="../../d8/d66/tcs3200_8h.html">tcs3200.h</a></div><div class="ttdoc">TCS3200 Color Sensor Arduino Library</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Calibration</h1>
 <p>The TCS3200 sensor requires calibration for accurate color sensing. Calibration involves capturing readings for both the lightest and darkest colors to establish the range for color intensity mapping. Use the <code>calibrate()</code> function to enable calibration mode, and after invoking <code>calibrate_light()</code> and <code>calibrate_dark()</code> functions to calibrate the sensor with white and black reference colors, respectively.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> setup() {</div>
@@ -152,7 +152,7 @@ Calibration</h1>
 <div class="line"> </div>
 <div class="line">    colorSensor.calibrate();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Reading Color Intensity</h1>
 <p>To obtain color intensity values for individual color channels (red, green, blue, and clear), use the following functions: <code>read_red()</code>, <code>read_green()</code>, <code>read_blue()</code>, and <code>read_clear()</code>. The <code>read_rgb_color()</code> function returns the RGB color intensity values as an RGBColor structure.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> loop() {</div>
@@ -166,7 +166,7 @@ Reading Color Intensity</h1>
 <div class="line">    <a class="code hl_struct" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> color = colorSensor.read_rgb_color();</div>
 <div class="line">}</div>
 <div class="ttc" id="astruct___r_g_b_color_html"><div class="ttname"><a href="../../d0/d8a/struct___r_g_b_color.html">_RGBColor</a></div><div class="ttdoc">Structure to represent RGB color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:57</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
 Integration Time and Frequency Scaling</h1>
 <p>The library provides control over the integration time and frequency scaling of the TCS3200 sensor. Integration time is set using the <code>integration_time()</code> function, and frequency scaling is set using the <code>frequency_scaling()</code> function. Integration time affects the accuracy and sensitivity of color measurements, while frequency scaling optimizes the trade-off between accuracy and response time.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> setup() {</div>
@@ -180,7 +180,7 @@ Integration Time and Frequency Scaling</h1>
 <div class="line">    colorSensor.frequency_scaling(<a class="code hl_define" href="../../d8/d66/tcs3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a>);</div>
 <div class="line">}</div>
 <div class="ttc" id="atcs3200_8h_html_a7c17ec4eb2e59a7c01f8ec0c1ac5656e"><div class="ttname"><a href="../../d8/d66/tcs3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a></div><div class="ttdeci">#define TCS3200_OFREQ_20P</div><div class="ttdoc">20% frequency scaling</div><div class="ttdef"><b>Definition</b> tcs3200.h:49</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
 White Balancing</h1>
 <p>White balancing is essential for achieving accurate color measurements. It allows users to calibrate the sensor based on a known white reference color. Use the <code>white_balance()</code> function to set the white balance with an RGBColor structure, and <code>white_balance()</code> to retrieve the current white balance settings.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> setup() {</div>
@@ -191,7 +191,7 @@ White Balancing</h1>
 <div class="line">    <a class="code hl_struct" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> whiteReference = {255, 255, 255};</div>
 <div class="line">    colorSensor.white_balance(whiteReference);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 Color Space Conversions</h1>
 <p>The TCS3200 library supports color space conversions from RGB to other color spaces, including HSV, CMYK, and CIE 1931 XYZ. Use the corresponding functions (<code>read_hsv()</code>, <code>read_cmyk()</code>, and <code>read_cie1931()</code>) to obtain color representations in the desired color space.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> loop() {</div>
@@ -207,7 +207,7 @@ Color Space Conversions</h1>
 <div class="ttc" id="astruct___c_i_e1931_html"><div class="ttname"><a href="../../dc/d69/struct___c_i_e1931.html">_CIE1931</a></div><div class="ttdoc">Structure to represent CIE 1931 XYZ color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:91</div></div>
 <div class="ttc" id="astruct___c_m_y_k_color_html"><div class="ttname"><a href="../../d4/dd1/struct___c_m_y_k_color.html">_CMYKColor</a></div><div class="ttdoc">Structure to represent CMYK color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:79</div></div>
 <div class="ttc" id="astruct___h_s_v_color_html"><div class="ttname"><a href="../../d4/dc0/struct___h_s_v_color.html">_HSVColor</a></div><div class="ttdoc">Structure to represent HSV color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:68</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
 Nearest Color Detection</h1>
 <p>The library provides a template function <code>nearest_color()</code> that allows users to find the nearest color label based on the current sensor readings. This is useful for applications like color classification and sorting.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> setup() {</div>
@@ -227,7 +227,7 @@ Nearest Color Detection</h1>
 <div class="line">    <span class="comment">// Find the nearest color label based on current sensor readings</span></div>
 <div class="line">    String nearestColorLabel = colorSensor.nearest_color&lt;String&gt;(colorLabels, colorValues, 5);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Interrupt Callbacks</h1>
 <p>The library allows users to define interrupt callbacks that trigger when the sensor readings exceed specified color thresholds. Use the <code>upper_bound_interrupt()</code> and <code>lower_bound_interrupt()</code> functions to set upper and lower color thresholds, respectively.</p>
 <div class="fragment"><div class="line"><span class="comment">// Define callback functions</span></div>
@@ -250,7 +250,7 @@ Interrupt Callbacks</h1>
 <div class="line">    colorSensor.upper_bound_interrupt(upperThreshold, upperThresholdExceeded);</div>
 <div class="line">    colorSensor.lower_bound_interrupt(lowerThreshold, lowerThresholdExceeded);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md18"></a>
 Integration in the Loop</h1>
 <p>The TCS3200 library supports continuous color sensing and interrupt triggering in the loop. The <code>loop()</code> function should be called in the main loop to trigger interrupt callbacks if defined.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> loop() {</div>
