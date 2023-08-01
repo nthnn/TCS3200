@@ -27,15 +27,15 @@ var NAVTREE =
   [ "TCS3200 Arduino Library", "index.html", [
     [ "TCS3200 Color Sensor Arduino Library", "index.html", null ],
     [ "Examples and Usage", "d5/d33/example.html", [
-      [ "Setup and Initialization", "d5/d33/example.html#autotoc_md10", null ],
-      [ "Calibration", "d5/d33/example.html#autotoc_md11", null ],
-      [ "Reading Color Intensity", "d5/d33/example.html#autotoc_md12", null ],
-      [ "Integration Time and Frequency Scaling", "d5/d33/example.html#autotoc_md13", null ],
-      [ "White Balancing", "d5/d33/example.html#autotoc_md14", null ],
-      [ "Color Space Conversions", "d5/d33/example.html#autotoc_md15", null ],
-      [ "Nearest Color Detection", "d5/d33/example.html#autotoc_md16", null ],
-      [ "Interrupt Callbacks", "d5/d33/example.html#autotoc_md17", null ],
-      [ "Integration in the Loop", "d5/d33/example.html#autotoc_md18", null ]
+      [ "Setup and Initialization", "d5/d33/example.html#autotoc_md11", null ],
+      [ "Calibration", "d5/d33/example.html#autotoc_md12", null ],
+      [ "Reading Color Intensity", "d5/d33/example.html#autotoc_md13", null ],
+      [ "Integration Time and Frequency Scaling", "d5/d33/example.html#autotoc_md14", null ],
+      [ "White Balancing", "d5/d33/example.html#autotoc_md15", null ],
+      [ "Color Space Conversions", "d5/d33/example.html#autotoc_md16", null ],
+      [ "Nearest Color Detection", "d5/d33/example.html#autotoc_md17", null ],
+      [ "Interrupt Callbacks", "d5/d33/example.html#autotoc_md18", null ],
+      [ "Integration in the Loop", "d5/d33/example.html#autotoc_md19", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
