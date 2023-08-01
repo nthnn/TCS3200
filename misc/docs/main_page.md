@@ -21,35 +21,55 @@ Here's an overview of the key functions and their roles in the library:
 
 - **Initialization**
 
-  The `begin()` function initializes the %TCS3200 sensor by configuring the necessary pins and setting default integration time and frequency scaling.
+    The `begin()` function initializes the TCS3200 sensor by configuring the necessary pins and setting default integration time and frequency scaling.
 
 - **Color Reading**
 
-  The library provides four functions to read the intensity of each color channel: `read_red()`, `read_green()`, `read_blue()`, and `read_clear()`. The clear channel reading is used for calibration and to calculate the RGB color intensity values.
+    Access the red, green, and blue intensity values captured by the TCS3200 color sensor. These raw RGB values can be used to analyze the color composition of an object or its surroundings. The library provides four functions to read the intensity of each color channel: `read_red()`, `read_green()`, `read_blue()`, and `read_clear()`. The clear channel reading is used for calibration and to calculate the RGB color intensity values.
 
 - **Calibration**
 
-  The `calibrate()`, `calibrate_light()`, and `calibrate_dark()` function enables calibration of the sensor. Calibration involves capturing readings for both the lightest and darkest colors to establish the range for color intensity mapping.
+    Achieve better color accuracy with sensor calibration. The library includes methods to calibrate the sensor in both light and dark environments, resulting in more reliable and consistent color measurements.
+
+    The `calibrate()`, `calibrate_light()`, and `calibrate_dark()` function enables calibration of the sensor. Calibration involves capturing readings for both the lightest and darkest colors to establish the range for color intensity mapping.
 
 - **Integration Time**
 
-  The `integration_time()` function allows users to get and set the integration time for each color reading, affecting the accuracy and sensitivity of color measurements.
+    Set integration time and frequency scaling to adapt to different lighting environments. The `integration_time()` function allows users to get and set the integration time for each color reading, affecting the accuracy and sensitivity of color measurements on calibration. Integration time determines the period for which the sensor collects light data while calibrating.
 
 - **Frequency Scaling**
 
-  The `frequency_scaling()` function gets and sets the scaling factor for the sensor's frequency output to optimize the trade-off between accuracy and response time.
+    The `frequency_scaling()` function gets and sets the scaling factor for the sensor's frequency output to optimize the trade-off between accuracy and response time.
 
 - **White Balancing**
 
-  The `white_balance()` functions provide the ability to calibrate the sensor based on a known white color to achieve accurate color measurements.
+    Perform white balancing to adjust color measurements for different light sources. By setting the white balance, color readings can be normalized to match the true colors under various lighting conditions, improving the accuracy of color detection. The `white_balance()` functions provide the ability to calibrate the sensor based on a known white color.
 
 - **Color Space Conversions**
 
-  The library offers functions to convert RGB color values to other color spaces such as HSV, CMYK, and CIE 1931 XYZ.
+    The library offers functions to convert RGB color values to other color spaces such as HSV, CMYK, and CIE 1931 XYZ.
+
+    - **HSV (Hue, Saturation, Value)**: Convert RGB colors to the HSV color space. HSV representation provides intuitive and easy-to-understand values for color manipulation and analysis. Hue represents the color, saturation measures color intensity, and value indicates brightness.
+
+    - **CMYK (Cyan, Magenta, Yellow, Key/Black)**: Transform RGB colors to CMYK, a color model commonly used in printing. CMYK values represent the amount of cyan, magenta, yellow, and black needed to reproduce the given RGB color accurately on printed media.
+
+    - **CIE 1931 XYZ (CIE 1931 Color Space)**: Convert RGB colors to CIE 1931 XYZ color space, which approximates human vision. This color space provides tristimulus values that represent the physiological response of the human eye to light.
 
 - **Nearest Color Detection**
 
-  The `nearest_color()` template function takes an array of color labels and RGBColor values and returns the nearest color label based on the current sensor readings.
+    Find the nearest color from a given set of colors. This feature is useful in applications where specific color matching is required, such as sorting objects based on color or identifying color categories. The `nearest_color()` template function takes an array of color labels and `RGBColor` values and returns the nearest color label based on the current sensor readings.
+
+- **Upper and Lower Bound Interrupts**
+
+    Configure upper and lower bound interrupts for specific color thresholds. When the measured color crosses these thresholds, user-defined callback functions can be triggered, enabling real-time color-based event handling.
+
+- **Chroma Calculation**
+
+    Calculate the chroma value from RGB readings, providing an indication of the purity and saturation of a color. Higher chroma values signify more vibrant colors, while lower values indicate less saturated or desaturated colors.
+
+- **RGB Dominant Color**
+
+    Identify the dominant color from the RGB readings. This feature can be valuable when you need to determine the most prominent color in a scene or object.
 
 ## Mathematical Equations
 
@@ -152,6 +172,30 @@ The graph below plots the CIE 1931 XYZ color space conversion from RGB (Red, Gre
 <div align="center">
   <img src="figure_3.png" alt="CIE 1931 XYZ Space Conversion Visual Key" />
 </div>
+
+## Frequency Scaling
+
+Frequency scaling in the %TCS3200 allows users to adjust the sensitivity of the sensor. It controls the duration of exposure time for each color filter and influences how frequently the sensor updates its output frequency. The sensor offers four frequency scaling options, which are selected by configuring the S0 and S1 control pins:
+
+1. **Power-Down Mode (TCS3200_PWR_DOWN)**
+
+  The sensor is turned off, and the photodiodes do not receive any light. This mode is used when the sensor is not needed to conserve power.
+
+2. **2% Output Frequency (TCS3200_OFREQ_2P)**
+
+  In this mode, the photodiodes are exposed to light for a very short time (2% of the total cycle time) and produce an output frequency corresponding to the detected light intensity. This mode is useful when very precise color measurements are required.
+
+3. **20% Output Frequency (TCS3200_OFREQ_20P)**
+
+  The photodiodes are exposed to light for a longer time (20% of the total cycle time) and produce an output frequency. This mode offers a good balance between sensitivity and response time.
+
+4. **100% Output Frequency (TCS3200_OFREQ_100P)**
+
+  On 100% frequency output, the photodiodes are exposed to light for the entire cycle time, resulting in a continuous output frequency. This mode provides the highest sensitivity but may lead to slower response times.
+
+The appropriate frequency scaling option depends on the specific application and the desired balance between sensitivity and response time. For tasks requiring fast color detection, the 2% or 20% frequency scaling options are preferred. On the other hand, when high precision and sensitivity are essential, the 100% frequency scaling option can be used, albeit with slower response times.
+
+Furthermore, frequency scaling plays a significant role during calibration as well. During calibration, the sensor is exposed to known colors, and the corresponding output frequencies are recorded. These reference frequencies are then used to map the sensor's output to accurate color values during normal operation.
 
 ## Getting Started
 
