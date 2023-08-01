@@ -4,6 +4,12 @@
 
 Color sensing is a crucial aspect of many modern applications, from color detection and sorting in industrial processes to smart home automation systems. The TCS3200 color sensor is a widely used device for color sensing due to its simplicity, accuracy, and ease of integration. To harness the full potential of this sensor, this library was developed, a powerful and user-friendly API that allows Arduino developers to interface with the TCS3200 sensor effortlessly.
 
+<p align="center">
+	<img src="misc/assets/tcs3200_color_sensor.jpg" width="320" />
+	<br/>
+	<small><i>TCS3200 Color Sensor</i></small>
+</p>
+
 The TCS3200 color sensor is a programmable device that can detect and measure the intensity of light across different color channels. It comes equipped with an array of photodiodes, each covered by a specific color filter: red, green, blue, and clear. The clear photodiode captures ambient light and is used to calculate the overall intensity.
 
 Also, the sensor has two main operating modes: frequency and analog output. In frequency mode, the sensor outputs a square wave with a frequency proportional to the intensity of light detected. In analog output mode, the sensor provides a voltage output proportional to the intensity.
