@@ -83,11 +83,23 @@ H = \begin{cases}
   \end{cases}
 \f}
 
+As can be seen above, the conversion from RGB to HSV involves a series of mathematical operations to extract these components.
+
+First, we determine the maximum value among the RGB color components (red, green, and blue) to obtain the maximum intensity, which represents the value component ( \f$ V \f$ ) in HSV. Next, we calculate the difference between the maximum and minimum values among the RGB components, referred to as the color range ( \f$ \Delta \f$ ). The saturation ( \f$ S \f$ ) is then derived by dividing the color range ( \f$ \Delta \f$ ) by the maximum intensity ( \f$ V \f$ ), representing the purity of the color.
+
+Then finally, the hue ( \f$ H \f$ ) is computed based on the maximum intensity ( \f$ V \f$ ) and the color range ( \f$ \Delta \f$ ). Depending on which RGB component has the highest intensity, we use different formulas to calculate the hue. This process results in a color representation that is more intuitive for human perception and allows easy manipulation of color properties, making it useful in many applications, including color adjustments and visualizations.
+
+<div align="center">
+  <img src="figure_1.png" alt="HSV Color Space Conversion Visual Key" />
+</div>
+
+Above, the graph plots the RGB components (Red, Green, and Blue) as functions of Hue while keeping the Saturation and Value fixed. By varying the Hue from 0 to 360 degrees, we can observe how the RGB components change to represent different colors on the color wheel.
+
 ### CMYK Color Space Conversion
 
 The CMYK color space represents colors using four components: cyan, magenta, yellow, and black. Cyan, magenta, and yellow represent the primary subtractive colors, and black represents the key color.
 
-The conversion from RGB to CMYK is achieved using the following equations:
+Moreover, the CMYK color space is commonly used in color printing and represents colors using four primary components: cyan, magenta, yellow, and black. The conversion from RGB to CMYK is based on subtractive color mixing, where the primary colors subtract light from white to create various hues.
 
 \f{equation}{
 K = 1 - max(R,G,B)
@@ -105,9 +117,21 @@ M = \frac{1-G-K}{1-K}
 Y = \frac{1-B-K}{1-K}
 \f}
 
+To convert RGB to CMYK, we first calculate the key color ( \f$ K \f$ ) component, which represents the amount of black needed to achieve the desired color. The key color is determined by finding the maximum value among the RGB components and subtracting it from 1. Next, we calculate the cyan, magenta, and yellow components by subtracting the corresponding RGB components from 1 and dividing by the key color ( \f$ K \f$ ). This process ensures that the CMYK color model effectively represents the proportions of each primary color required to reproduce a given color on a printed surface.
+
+<div align="center">
+  <img src="figure_2.png" alt="CMYK Color Space Conversion Visual Key" />
+</div>
+
+The image above shows the RGB components as functions of Cyan while keeping Magenta and Yellow fixed. By varying the Cyan component from 0 to 1, we can observe how the RGB components change to represent different colors in the CMYK color space.
+
 ### CIE 1931 XYZ Color Space Conversion
 
 The CIE 1931 XYZ color space is a standard color space based on human color perception. It consists of three components: X, Y, and Z. The conversion from RGB to CIE 1931 XYZ is achieved using the following equations:
+
+Furthermore, this color space is a standardized color model developed by the International Commission on Illumination (CIE) to represent human color perception. It forms the foundation of many other color spaces and provides a device-independent representation of colors.
+
+The conversion from RGB to CIE 1931 XYZ involves a linear transformation of the RGB components using specific weighted coefficients. Each RGB component is multiplied by these coefficients, and the results are summed to obtain the X, Y, and Z components in the XYZ color space.
 
 \f{equation}{
 X = 0.4124564 × R + 0.3575761 × G + 0.1804375 × B
@@ -120,6 +144,42 @@ Y = 0.2126729 × R + 0.7151522 × G + 0.0721750 × B
 \f{equation}{
 Z = 0.0193339 × R + 0.1191920 × G + 0.9503041 × B
 \f}
+
+The X, Y, and Z components represent the tristimulus values that correspond to the amount of red, green, and blue light emitted or reflected from a surface under a particular light source. The XYZ color space provides a mathematical model that allows accurate comparisons and transformations between colors, making it an essential tool for color science and various color-related applications.
+
+The graph below plots the CIE 1931 XYZ color space conversion from RGB (Red, Green, Blue). Where X, Y, and Z represents the tristimulus values, which are linear transformations of the RGB components. X, Y, and Z are not directly perceptible as colors but are used to derive other color spaces like CIE Lab* and CIE Luv*.
+
+<div align="center">
+  <img src="figure_3.png" alt="CIE 1931 XYZ Space Conversion Visual Key" />
+</div>
+
+## Getting Started
+
+To start using %TCS3200 library in your Arduino projects, follow these simple steps:
+
+1. Download the %TCS3200 library from the GitHub repository.
+2. Extract the downloaded archive and rename the folder to "TCS3200".
+3. Move the "TCS3200" folder to the Arduino libraries directory on your computer.
+    - Windows: `Documents\Arduino\libraries\`
+    - MacOS: `~/Documents/Arduino/libraries/`
+    - Linux: `~/Arduino/libraries/`
+
+4. Launch the Arduino IDE.
+5. Click on `Sketch > Include Library > %TCS3200` to include the library in your sketch.
+
+You are now ready to use TCS3200 library in your Arduino projects!
+
+## Examples
+
+To access the examples:
+
+1. Open the Arduino IDE.
+2. Click on `File > Examples > %TCS3200` to see the list of available examples.
+3. Upload the example sketch to your Arduino board and see the results in action.
+
+## Contribution and Feedback
+
+Contributions and feedback are all welcome to enhance this library. If you encounter any issues, have suggestions for improvements, or would like to contribute code, please do so.
 
 @page example Examples and Usage
 @brief This page contains the comprehensive list of examples and usage of TCS3200 Arduino library.
