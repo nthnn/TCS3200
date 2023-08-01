@@ -6,7 +6,7 @@
  * 31 July 2023
  *
  */
-#include <tcs3200.h>
+#include <TCS3200.h>
 
 // Define pin connections
 #define S0_PIN 15
