@@ -312,7 +312,6 @@ void TCS3200::loop() {
         return;
 
     RGBColor current_reading = this->read_rgb_color();
-
     if(this->upper_bound_interrupt_callback != nullptr &&
         current_reading.red > this->ub_threshold.red &&
         current_reading.green > this->ub_threshold.green &&

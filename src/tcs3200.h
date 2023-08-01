@@ -36,7 +36,6 @@
  * **Example usage**:
  * @code{.cpp}
  * // TCS3200 Library Full Example
- * //
  * // By: Nathanne Isip
  * // 31 July 2023
  * 
