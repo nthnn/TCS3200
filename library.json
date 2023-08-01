@@ -1,0 +1,21 @@
+{
+    "name": "TCS3200",
+    "version": "1.0.0",
+    "description": "Arduino library for TCS3200 color sensor.",
+    "keywords": "TCS3200, Color Sensor",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nthnn/TCS3200"
+    },
+    "authors": [
+        {
+            "name": "nathannestein",
+            "email": "nathanneisip@gmail.com",
+            "url": "https://nthnn.github.io/"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/nthnn/TCS3200",
+    "frameworks": "*",
+    "platforms": "*"
+}
