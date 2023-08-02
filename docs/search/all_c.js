@@ -9,5 +9,5 @@ var searchData=
   ['read_5fred_6',['read_red',['../d5/d46/class_t_c_s3200.html#a3e386e9f16dede2494472fe3d4bb96ec',1,'TCS3200']]],
   ['read_5frgb_5fcolor_7',['read_rgb_color',['../d5/d46/class_t_c_s3200.html#ad1bc1b09d1dbec67d06bc69f03692588',1,'TCS3200']]],
   ['red_8',['red',['../d0/d8a/struct___r_g_b_color.html#a569001c4eeed743003f94f76e12efb6d',1,'_RGBColor']]],
-  ['rgbcolor_9',['RGBColor',['../d8/d66/tcs3200_8h.html#acbc9da7672f18f747dcc88210702a6e9',1,'tcs3200.h']]]
+  ['rgbcolor_9',['RGBColor',['../d5/dac/_t_c_s3200_8h.html#acbc9da7672f18f747dcc88210702a6e9',1,'TCS3200.h']]]
 ];

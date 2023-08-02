@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('d5/d33/example.html','../../'); initRe
 <h1><a class="anchor" id="autotoc_md11"></a>
 Setup and Initialization</h1>
 <p>To use the TCS3200 Arduino Library, include the "tcs3200.h" header file and create an instance of the <a class="el" href="../../d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> class. Use the <code>begin()</code> function to initialize the TCS3200 sensor, configure pins, and set default integration time and frequency scaling.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d8/d66/tcs3200_8h.html">tcs3200.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d5/dac/_t_c_s3200_8h.html">tcs3200.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Pin assignments for S0, S1, S2, S3, and OUT pins</span></div>
 <div class="line"><span class="preprocessor">#define S0_PIN 2</span></div>
@@ -133,8 +133,8 @@ Setup and Initialization</h1>
 <div class="line">    <span class="comment">// Initialize the sensor</span></div>
 <div class="line">    colorSensor.begin();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_t_c_s3200_html"><div class="ttname"><a href="../../d5/d46/class_t_c_s3200.html">TCS3200</a></div><div class="ttdoc">Class representing the TCS3200 color sensor.</div><div class="ttdef"><b>Definition</b> tcs3200.h:220</div></div>
-<div class="ttc" id="atcs3200_8h_html"><div class="ttname"><a href="../../d8/d66/tcs3200_8h.html">tcs3200.h</a></div><div class="ttdoc">TCS3200 Color Sensor Arduino Library</div></div>
+<div class="ttc" id="a_t_c_s3200_8h_html"><div class="ttname"><a href="../../d5/dac/_t_c_s3200_8h.html">TCS3200.h</a></div><div class="ttdoc">TCS3200 Color Sensor Arduino Library</div></div>
+<div class="ttc" id="aclass_t_c_s3200_html"><div class="ttname"><a href="../../d5/d46/class_t_c_s3200.html">TCS3200</a></div><div class="ttdoc">Class representing the TCS3200 color sensor.</div><div class="ttdef"><b>Definition</b> TCS3200.h:219</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Calibration</h1>
 <p>The TCS3200 sensor requires calibration for accurate color sensing. Calibration involves capturing readings for both the lightest and darkest colors to establish the range for color intensity mapping. Use the <code>calibrate()</code> function to enable calibration mode, and after invoking <code>calibrate_light()</code> and <code>calibrate_dark()</code> functions to calibrate the sensor with white and black reference colors, respectively.</p>
@@ -165,7 +165,7 @@ Reading Color Intensity</h1>
 <div class="line">    <span class="comment">// Or read RGB color intensity values as an RGBColor structure</span></div>
 <div class="line">    <a class="code hl_struct" href="../../d0/d8a/struct___r_g_b_color.html">RGBColor</a> color = colorSensor.read_rgb_color();</div>
 <div class="line">}</div>
-<div class="ttc" id="astruct___r_g_b_color_html"><div class="ttname"><a href="../../d0/d8a/struct___r_g_b_color.html">_RGBColor</a></div><div class="ttdoc">Structure to represent RGB color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:168</div></div>
+<div class="ttc" id="astruct___r_g_b_color_html"><div class="ttname"><a href="../../d0/d8a/struct___r_g_b_color.html">_RGBColor</a></div><div class="ttdoc">Structure to represent RGB color values.</div><div class="ttdef"><b>Definition</b> TCS3200.h:167</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
 Integration Time and Frequency Scaling</h1>
 <p>The library provides control over the integration time and frequency scaling of the TCS3200 sensor. Integration time is set using the <code>integration_time()</code> function, and frequency scaling is set using the <code>frequency_scaling()</code> function. Integration time affects the accuracy and sensitivity of color measurements, while frequency scaling optimizes the trade-off between accuracy and response time.</p>
@@ -177,9 +177,9 @@ Integration Time and Frequency Scaling</h1>
 <div class="line">    colorSensor.integration_time(2500);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Set frequency scaling to 20%</span></div>
-<div class="line">    colorSensor.frequency_scaling(<a class="code hl_define" href="../../d8/d66/tcs3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a>);</div>
+<div class="line">    colorSensor.frequency_scaling(<a class="code hl_define" href="../../d5/dac/_t_c_s3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a>);</div>
 <div class="line">}</div>
-<div class="ttc" id="atcs3200_8h_html_a7c17ec4eb2e59a7c01f8ec0c1ac5656e"><div class="ttname"><a href="../../d8/d66/tcs3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a></div><div class="ttdeci">#define TCS3200_OFREQ_20P</div><div class="ttdoc">20% frequency scaling</div><div class="ttdef"><b>Definition</b> tcs3200.h:160</div></div>
+<div class="ttc" id="a_t_c_s3200_8h_html_a7c17ec4eb2e59a7c01f8ec0c1ac5656e"><div class="ttname"><a href="../../d5/dac/_t_c_s3200_8h.html#a7c17ec4eb2e59a7c01f8ec0c1ac5656e">TCS3200_OFREQ_20P</a></div><div class="ttdeci">#define TCS3200_OFREQ_20P</div><div class="ttdoc">20% frequency scaling</div><div class="ttdef"><b>Definition</b> TCS3200.h:159</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 White Balancing</h1>
 <p>White balancing is essential for achieving accurate color measurements. It allows users to calibrate the sensor based on a known white reference color. Use the <code>white_balance()</code> function to set the white balance with an RGBColor structure, and <code>white_balance()</code> to retrieve the current white balance settings.</p>
@@ -204,9 +204,9 @@ Color Space Conversions</h1>
 <div class="line">    <span class="comment">// Read color in CIE 1931 XYZ color space</span></div>
 <div class="line">    <a class="code hl_struct" href="../../dc/d69/struct___c_i_e1931.html">CIE1931Color</a> cie1931Color = colorSensor.read_cie1931();</div>
 <div class="line">}</div>
-<div class="ttc" id="astruct___c_i_e1931_html"><div class="ttname"><a href="../../dc/d69/struct___c_i_e1931.html">_CIE1931</a></div><div class="ttdoc">Structure to represent CIE 1931 XYZ color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:202</div></div>
-<div class="ttc" id="astruct___c_m_y_k_color_html"><div class="ttname"><a href="../../d4/dd1/struct___c_m_y_k_color.html">_CMYKColor</a></div><div class="ttdoc">Structure to represent CMYK color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:190</div></div>
-<div class="ttc" id="astruct___h_s_v_color_html"><div class="ttname"><a href="../../d4/dc0/struct___h_s_v_color.html">_HSVColor</a></div><div class="ttdoc">Structure to represent HSV color values.</div><div class="ttdef"><b>Definition</b> tcs3200.h:179</div></div>
+<div class="ttc" id="astruct___c_i_e1931_html"><div class="ttname"><a href="../../dc/d69/struct___c_i_e1931.html">_CIE1931</a></div><div class="ttdoc">Structure to represent CIE 1931 XYZ color values.</div><div class="ttdef"><b>Definition</b> TCS3200.h:201</div></div>
+<div class="ttc" id="astruct___c_m_y_k_color_html"><div class="ttname"><a href="../../d4/dd1/struct___c_m_y_k_color.html">_CMYKColor</a></div><div class="ttdoc">Structure to represent CMYK color values.</div><div class="ttdef"><b>Definition</b> TCS3200.h:189</div></div>
+<div class="ttc" id="astruct___h_s_v_color_html"><div class="ttname"><a href="../../d4/dc0/struct___h_s_v_color.html">_HSVColor</a></div><div class="ttdoc">Structure to represent HSV color values.</div><div class="ttdef"><b>Definition</b> TCS3200.h:178</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Nearest Color Detection</h1>
 <p>The library provides a template function <code>nearest_color()</code> that allows users to find the nearest color label based on the current sensor readings. This is useful for applications like color classification and sorting.</p>
