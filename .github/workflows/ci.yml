@@ -30,4 +30,4 @@ jobs:
 
       - name: Build Arduino library
         run: |
-          arduino-cli compile --fqbn arduino:avr:mega --library TCS3200-Color-Sensor/ --build-path TCS3200-Color-Sensor/build TCS3200-Color-Sensor/examples/full_example/full_example.ino
+          arduino-cli compile --fqbn arduino:avr:mega --library TCS3200-Color-Sensor/src --build-path TCS3200-Color-Sensor/build TCS3200-Color-Sensor/examples/full_example/full_example.ino
