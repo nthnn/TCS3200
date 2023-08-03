@@ -207,9 +207,9 @@ Furthermore, frequency scaling plays a significant role during calibration as we
 
 To start using %TCS3200 color sensor library in your Arduino projects, follow these simple steps:
 
-1. Download the TCS3200-Color-Sensor library from the GitHub repository.
-2. Extract the downloaded archive and rename the folder to "TCS3200-Color-Sensor".
-3. Move the "TCS3200-Color-Sensor" folder to the Arduino libraries directory on your computer.
+1. Download the %TCS3200 library from the GitHub repository.
+2. Extract the downloaded archive and rename the folder to "TCS3200".
+3. Move the "TCS3200" folder to the Arduino libraries directory on your computer.
     - Windows: `Documents\Arduino\libraries\`
     - MacOS: `~/Documents/Arduino/libraries/`
     - Linux: `~/Arduino/libraries/`

@@ -1,6 +1,7 @@
 # TCS3200 Color Sensor Arduino Library
 
-![Arduino CI Workflow](https://github.com/nthnn/TCS3200/actions/workflows/ci.yml/badge.svg)
+![Arduino CI](https://github.com/nthnn/TCS3200/actions/workflows/arduino_ci.yml/badge.svg)
+![Arduino Lint](https://github.com/nthnn/TCS3200/actions/workflows/arduino_lint.yml/badge.svg)
 
 Color sensing is a crucial aspect of many modern applications, from color detection and sorting in industrial processes to smart home automation systems. The TCS3200 color sensor is a widely used device for color sensing due to its simplicity, accuracy, and ease of integration. To harness the full potential of this sensor, this library was developed, a powerful and user-friendly API that allows Arduino developers to interface with the TCS3200 sensor effortlessly.
 
@@ -80,7 +81,7 @@ Here's an overview of the key functions and their roles in the library:
 
 To start using TCS3200 library in your Arduino projects, follow these simple steps:
 
-1. Download the TCS3200-Color-Sensor library from the GitHub repository.
+1. Download the TCS3200 library from the GitHub repository.
 2. Extract the downloaded archive and rename the folder to "TCS3200".
 3. Move the "TCS3200" folder to the Arduino libraries directory on your computer.
     - Windows: `Documents\Arduino\libraries\`
@@ -90,7 +91,7 @@ To start using TCS3200 library in your Arduino projects, follow these simple ste
 4. Launch the Arduino IDE.
 5. Click on `Sketch > Include Library > TCS3200 Color Sensor` to include the library in your sketch.
 
-You are now ready to use TCS3200 library in your Arduino projects! For detailed information about using this library, please refer to the [Documentation](https://nthnn.github.io/TCS3200-Color-Sensor/).
+You are now ready to use TCS3200 library in your Arduino projects! For detailed information about using this library, please refer to the [Documentation](https://nthnn.github.io/TCS3200/).
 
 ## Examples
 

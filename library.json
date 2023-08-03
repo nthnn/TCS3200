@@ -5,7 +5,7 @@
     "keywords": "TCS3200, Color Sensor",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nthnn/TCS3200-Color-Sensor"
+        "url": "https://github.com/nthnn/TCS3200"
     },
     "authors": [
         {
@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "homepage": "https://github.com/nthnn/TCS3200-Color-Sensor",
+    "homepage": "https://github.com/nthnn/TCS3200",
     "frameworks": "*",
     "platforms": "*"
 }
