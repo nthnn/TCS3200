@@ -128,14 +128,14 @@ Understanding the TCS3200 Color Sensor</h2>
 <p>To achieve accurate color sensing, the TCS3200 library employs both frequency and analog output modes to calibrate and interpret color data. Additionally, the library allows users to customize the integration time and frequency scaling of the sensor to optimize performance for specific applications.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Algorithm Overview</h2>
-<p>The <a class="el" href="d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> Arduino Library is designed with simplicity and extensibility in mind. It offers a wide range of functionalities, from basic color sensing to advanced features like white balancing, color space conversions, and nearest color detection.</p>
+<p>The TCS3200 Arduino Library is designed with simplicity and extensibility in mind. It offers a wide range of functionalities, from basic color sensing to advanced features like white balancing, color space conversions, and nearest color detection.</p>
 <p>Here's an overview of the key functions and their roles in the library:</p>
 <ul>
 <li><p class="startli"><b>Initialization</b></p>
-<p class="startli">The <code>begin()</code> function initializes the <a class="el" href="d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> sensor by configuring the necessary pins and setting default integration time and frequency scaling.</p>
+<p class="startli">The <code>begin()</code> function initializes the TCS3200 sensor by configuring the necessary pins and setting default integration time and frequency scaling.</p>
 </li>
 <li><p class="startli"><b>Color Reading</b></p>
-<p class="startli">Access the red, green, and blue intensity values captured by the <a class="el" href="d5/d46/class_t_c_s3200.html" title="Class representing the TCS3200 color sensor.">TCS3200</a> color sensor. These raw RGB values can be used to analyze the color composition of an object or its surroundings. The library provides four functions to read the intensity of each color channel: <code>read_red()</code>, <code>read_green()</code>, <code>read_blue()</code>, and <code>read_clear()</code>. The clear channel reading is used for calibration and to calculate the RGB color intensity values.</p>
+<p class="startli">Access the red, green, and blue intensity values captured by the TCS3200 color sensor. These raw RGB values can be used to analyze the color composition of an object or its surroundings. The library provides four functions to read the intensity of each color channel: <code>read_red()</code>, <code>read_green()</code>, <code>read_blue()</code>, and <code>read_clear()</code>. The clear channel reading is used for calibration and to calculate the RGB color intensity values.</p>
 </li>
 <li><p class="startli"><b>Calibration</b></p>
 <p class="startli">Achieve better color accuracy with sensor calibration. The library includes methods to calibrate the sensor in both light and dark environments, resulting in more reliable and consistent color measurements.</p>
@@ -279,9 +279,9 @@ Frequency Scaling</h2>
 Getting Started</h2>
 <p>To start using TCS3200 color sensor library in your Arduino projects, follow these simple steps:</p>
 <ol type="1">
-<li>Download the TCS3200-Color-Sensor library from the GitHub repository.</li>
-<li>Extract the downloaded archive and rename the folder to "TCS3200-Color-Sensor".</li>
-<li>Move the "TCS3200-Color-Sensor" folder to the Arduino libraries directory on your computer.<ul>
+<li>Download the TCS3200 library from the GitHub repository.</li>
+<li>Extract the downloaded archive and rename the folder to "TCS3200".</li>
+<li>Move the "TCS3200" folder to the Arduino libraries directory on your computer.<ul>
 <li>Windows: <code>Documents\Arduino\libraries\</code></li>
 <li>MacOS: <code>~/Documents/Arduino/libraries/</code></li>
 <li>Linux: <code>~/Arduino/libraries/</code></li>

@@ -36,30 +36,13 @@ var NAVTREE =
       [ "Nearest Color Detection", "d5/d33/example.html#autotoc_md17", null ],
       [ "Interrupt Callbacks", "d5/d33/example.html#autotoc_md18", null ],
       [ "Integration in the Loop", "d5/d33/example.html#autotoc_md19", null ]
-    ] ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"d5/d33/example.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
