@@ -108,7 +108,6 @@ void TCS3200::calibrate() {
 void TCS3200::calibrate_light() {
     uint8_t r = 0, g = 0, b = 0, c = 0;
 
-    delay(this->_integration_time / 2);
     for(int i = 0; i < 10; i++) {
         r += this->read_red();
         g += this->read_green();
@@ -125,7 +124,6 @@ void TCS3200::calibrate_light() {
 void TCS3200::calibrate_dark() {
     uint8_t r = 0, g = 0, b = 0, c = 0;
 
-    delay(this->_integration_time / 2);
     for(int i = 0; i < 10; i++) {
         r += this->read_red();
         g += this->read_green();
