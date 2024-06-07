@@ -1,6 +1,6 @@
 {
     "name": "TCS3200",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Arduino library for TCS3200 color sensor.",
     "keywords": "TCS3200, Color Sensor",
     "repository": {
