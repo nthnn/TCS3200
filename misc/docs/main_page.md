@@ -1,6 +1,9 @@
 @mainpage %TCS3200 Color Sensor Arduino Library
 @tableofcontents
 
+![Arduino CI](https://github.com/nthnn/TCS3200/actions/workflows/arduino_ci.yml/badge.svg)
+![Arduino Lint](https://github.com/nthnn/TCS3200/actions/workflows/arduino_lint.yml/badge.svg)
+
 ## Overview
 
 Color sensing is a crucial aspect of many modern applications, from color detection and sorting in industrial processes to smart home automation systems. The %TCS3200 color sensor is a widely used device for color sensing due to its simplicity, accuracy, and ease of integration. To harness the full potential of this sensor, this library was developed, a powerful and user-friendly API that allows Arduino developers to interface with the %TCS3200 sensor effortlessly. This comprehensive documentation will delve into the intricacies of the %TCS3200 sensor, the algorithm behind the library, and the mathematical equations used to convert raw sensor readings into meaningful color data.
